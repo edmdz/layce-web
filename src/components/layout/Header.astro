@@ -1,0 +1,84 @@
+---
+// src/components/layout/Header.astro
+import Logo from '../../assets/Logo.svg'; // Importar el logo
+
+const navLinks = [
+    { href: "/servicios", text: "Servicios" },
+    { href: "/proyectos", text: "Proyectos" },
+    { href: "/nosotros", text: "Nosotros" },
+    { href: "/metas-innovacion", text: "Metas e Innovación" },
+    { href: "/contacto", text: "Contacto" },
+];
+
+// Los colores ahora se toman de tailwind.config.cjs a través de clases
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <a href="/" class="flex items-center text-primary hover:text-secondary">
+            <img src={Logo.src} alt="Logo LAYCE Construcciones" class="w-20 h-auto" /> {/* Logo con tamaño y alt text */}
+        </a>
+
+        <div class="hidden md:flex space-x-4 items-center">
+            {navLinks.map(link => (
+                <a href={link.href} class="text-neutralText hover:text-primary">{link.text}</a>
+            ))}
+            {/* <a href="/cotiza"
+               class="px-4 py-2 rounded font-medium bg-primary text-white hover:bg-secondary"
+            >
+                Cotiza
+            </a> */}
+        </div>
+
+        <!-- Botón para menú móvil -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-neutralText focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Abrir menú de navegación</title>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menú móvil (oculto por defecto) -->
+    <div 
+        id="mobile-menu" 
+        class="md:hidden bg-white shadow-lg 
+               overflow-hidden transition-all duration-300 ease-in-out 
+               opacity-0 max-h-0 invisible translate-y-[-10px]"
+    >
+        {navLinks.map(link => (
+            <a href={link.href} class="block px-4 py-2 text-neutralText hover:bg-lightGray">{link.text}</a>
+        ))}
+        {/* <a href="/cotiza"
+           class="block px-4 py-3 text-center font-medium bg-primary text-white hover:bg-secondary"
+        >
+            Cotiza
+        </a> */}
+    </div>
+</header>
+
+<script>
+    // Script para el menú móvil
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+            
+            // Alternar clases para la animación
+            if (mobileMenu.classList.contains('opacity-0')) {
+                // Abrir menú
+                mobileMenu.classList.remove('opacity-0', 'max-h-0', 'invisible', 'translate-y-[-10px]');
+                mobileMenu.classList.add('opacity-100', 'max-h-screen', 'visible', 'translate-y-0');
+            } else {
+                // Cerrar menú
+                mobileMenu.classList.remove('opacity-100', 'max-h-screen', 'visible', 'translate-y-0');
+                mobileMenu.classList.add('opacity-0', 'max-h-0', 'invisible', 'translate-y-[-10px]');
+            }
+        });
+    }
+</script> 
