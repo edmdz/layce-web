@@ -1,14 +1,31 @@
 ---
 import Layout from '../components/layout/Layout.astro';
+import HeroSection from '../components/home/HeroSection.astro'; // Importar el nuevo componente
+// Importar otros componentes de la Home page aquí
+// import AboutUsSummary from '../components/home/AboutUsSummary.astro';
+// import FeaturedServices from '../components/home/FeaturedServices.astro';
+// ... etc.
+
 import '../styles/global.css';
 ---
 
-<Layout title="Inicio" description="Página de inicio de LAYCE Construcciones.">
-	<h1 class="text-3xl font-bold text-center" style="color: #3A52C1;">
-		Bienvenido a LAYCE Construcciones
-	</h1>
-	<p class="mt-4 text-center">
-		Contenido de la página de inicio irá aquí.
-	</p>
-	<!-- Aquí irían los demás componentes de la página de inicio según el wireframe: Hero, Sobre Nosotros, Servicios, etc. -->
+<Layout 
+    title="Inicio - Construyendo Futuros Sólidos" 
+    description="LAYCE Construcciones: Expertos en diseño, construcción y gestión de proyectos. Calidad, innovación y sostenibilidad en cada obra.">
+    
+    <HeroSection />
+
+    {/* Aquí irían los demás componentes de la página de inicio según el wireframe: */}
+    {/* <AboutUsSummary /> */}
+    {/* <FeaturedServices /> */}
+    {/* <RecentProjects /> */}
+    {/* <TestimonialSection /> */}
+    {/* <FinalCTA /> */}
+
+    <!-- Contenido de placeholder mientras desarrollamos las otras secciones -->
+    <div class="py-16 text-center">
+        <h2 class="text-2xl font-semibold text-neutralText">Más secciones próximamente...</h2>
+        <p class="text-neutralText/80">Estamos construyendo el resto de la página de inicio.</p>
+    </div>
+
 </Layout>

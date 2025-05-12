@@ -19,23 +19,9 @@ const { title, description } = Astro.props;
     <meta name="description" content={description}>
     <meta name="generator" content={Astro.generator}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | LAYCE Construcciones</title>
+    <title>{title}</title> {/* LAYCE Construcciones ya no es necesario aquí si se pone en cada página */}
 
-    <!-- Aquí podríamos añadir fuentes, estilos globales si no usamos Tailwind globalmente, etc. -->
-    <style>
-        /* Estilos muy básicos para empezar, Tailwind se encargará del resto */
-        /* Los estilos de body se manejarán con clases de Tailwind */
-        /* body {
-            font-family: sans-serif; 
-            margin: 0;
-            background-color: #FFFFFF; 
-            color: #333333; 
-        } */
-
-        main {
-            padding: 1rem; /* Espaciado básico */
-        }
-    </style>
+    <!-- El estilo global de main con padding: 1rem se ha eliminado -->
 </head>
 <body class="bg-white text-neutralText">
     <Header />
@@ -44,4 +30,4 @@ const { title, description } = Astro.props;
     </main>
     {/* <Footer /> */}
 </body>
-</html> 
+</html>
