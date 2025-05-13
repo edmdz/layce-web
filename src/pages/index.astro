@@ -1,31 +1,20 @@
 ---
 import Layout from '../components/layout/Layout.astro';
-import HeroSection from '../components/home/HeroSection.astro'; // Importar el nuevo componente
-// Importar otros componentes de la Home page aquí
-// import AboutUsSummary from '../components/home/AboutUsSummary.astro';
-// import FeaturedServices from '../components/home/FeaturedServices.astro';
-// ... etc.
-
+import HeroSection from '../components/home/HeroSection.astro';
+import AboutSummary from '../components/home/AboutSummary.astro'; // Importar el nuevo componente
 import '../styles/global.css';
+
+// Datos SEO para la página de inicio
+const pageTitle = "Inicio | LAYCE Construcciones";
+const pageDescription = "LAYCE Construcciones: Edificamos espacios funcionales y sostenibles. Descubre nuestros servicios de diseño, construcción y gestión de proyectos."; 
 ---
 
-<Layout 
-    title="Inicio - Construyendo Futuros Sólidos" 
-    description="LAYCE Construcciones: Expertos en diseño, construcción y gestión de proyectos. Calidad, innovación y sostenibilidad en cada obra.">
-    
-    <HeroSection />
+<Layout title={pageTitle} description={pageDescription}>
+	
+	<HeroSection />
+	
+	<AboutSummary /> 
 
-    {/* Aquí irían los demás componentes de la página de inicio según el wireframe: */}
-    {/* <AboutUsSummary /> */}
-    {/* <FeaturedServices /> */}
-    {/* <RecentProjects /> */}
-    {/* <TestimonialSection /> */}
-    {/* <FinalCTA /> */}
-
-    <!-- Contenido de placeholder mientras desarrollamos las otras secciones -->
-    <div class="py-16 text-center">
-        <h2 class="text-2xl font-semibold text-neutralText">Más secciones próximamente...</h2>
-        <p class="text-neutralText/80">Estamos construyendo el resto de la página de inicio.</p>
-    </div>
+	{/* Aquí irán las siguientes secciones: Servicios, Proyectos, etc. */}
 
 </Layout>

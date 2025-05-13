@@ -1,0 +1,87 @@
+---
+// src/components/home/AboutSummary.astro
+
+// Datos para la sección (podrían venir de un CMS o archivo de contenido más adelante)
+const aboutData = {
+    title: "Sobre Nosotros",
+    // Usaremos un icono SVG inline o un componente Icono si tenemos varios
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto text-primary mb-4"> <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /> </svg>`,
+    text: "Más de [X] años de experiencia, confianza y un legado familiar en la industria de la construcción nos respaldan. Comprometidos con la calidad y la satisfacción del cliente en cada proyecto.", // Ajustar [X] con el número real
+    ctaText: "Ver más sobre la empresa",
+    ctaLink: "/nosotros"
+};
+---
+
+<section class="bg-white py-16 md:py-20 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        {/* Icono */}
+        <Fragment set:html={aboutData.icon} />
+
+        {/* Título */}
+        <h2 class="text-3xl md:text-4xl font-bold text-neutralText mb-4">
+            {aboutData.title}
+        </h2>
+
+        {/* Texto descriptivo */}
+        <p class="max-w-xl lg:max-w-2xl mx-auto text-base md:text-lg text-neutralText/80 mb-8 balance-text">
+            {aboutData.text}
+        </p>
+
+        {/* Call to Action */}
+        <a 
+            href={aboutData.ctaLink} 
+            class="inline-flex items-center text-primary font-medium group"
+        >
+            {aboutData.ctaText}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+        </a>
+
+    </div>
+</section>
+
+<style>
+    /* Reutilizamos balance-text si es necesario */
+    .balance-text {
+        text-wrap: balance;
+    }
+
+    /* Opcional: Animación suave al hacer scroll hacia la sección */
+    /*
+    section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    */
+</style>
+
+{/* Script opcional para la animación de entrada al hacer scroll (Intersection Observer) */}
+{/*
+<script>
+    const sections = document.querySelectorAll('section'); // O un selector más específico
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Opcional: dejar de observar una vez que es visible
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa cuando el 10% de la sección es visible
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+*/}
