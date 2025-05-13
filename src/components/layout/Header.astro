@@ -1,6 +1,6 @@
 ---
 // src/components/layout/Header.astro
-import Logo from '../../assets/Logo.svg'; // El logo actual
+import Logo from '../../assets/Layce_logo_horizontal_transparent.svg'; // El logo actual
 
 // Definición de enlaces de navegación
 const navLinks = [
@@ -28,12 +28,12 @@ const isActive = (href: string) => {
 ---
 
 <header class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200/75">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center" aria-label="Navegación Principal">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center" aria-label="Navegación Principal">
         <a href="/" class="flex items-center group" aria-label="Página de inicio de LAYCE Construcciones">
             <img 
                 src={Logo.src} 
                 alt="Logo LAYCE Construcciones" 
-                class="h-12 md:h-14 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105" 
+                class="h-16 md:h-20 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             {/* Considerar añadir un span con "LAYCE Construcciones" para SEO si el logo es solo isologo */}
             {/* <span class="sr-only">LAYCE Construcciones</span> */}
