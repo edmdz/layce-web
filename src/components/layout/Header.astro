@@ -28,12 +28,12 @@ const isActive = (href: string) => {
 ---
 
 <header class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200/75">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center" aria-label="Navegación Principal">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center" aria-label="Navegación Principal">
         <a href="/" class="flex items-center group" aria-label="Página de inicio de LAYCE Construcciones">
             <img 
                 src={Logo.src} 
                 alt="Logo LAYCE Construcciones" 
-                class="h-16 md:h-20 lg:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+                class="h-20 md:h-24 lg:h-24 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             {/* Considerar añadir un span con "LAYCE Construcciones" para SEO si el logo es solo isologo */}
             {/* <span class="sr-only">LAYCE Construcciones</span> */}
@@ -71,7 +71,7 @@ const isActive = (href: string) => {
                 id="mobile-menu-button" 
                 class="text-neutralText focus:outline-none p-2 rounded-md hover:bg-lightGray focus:ring-2 focus:ring-primary" 
                 aria-controls="mobile-menu" 
-                aria-expanded="false"
+                aria-expanded="false" 
                 aria-label="Abrir menú de navegación"
             >
                 <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3A52C1',       // Azul LAYCE
-        secondary: '#C23333',     // Rojo LAYCE
+        primary: '#3F63C8',       // Azul LAYCE
+        secondary: '#DE3A3A',     // Rojo LAYCE
         neutralText: '#333333',  // Gris Oscuro para texto
         lightGray: '#F5F5F5',    // Gris Claro para fondos de UI
         softBlack: '#1A1A1A',    // Negro suave para contraste
