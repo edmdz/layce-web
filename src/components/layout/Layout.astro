@@ -1,7 +1,6 @@
 ---
 // src/components/layout/Layout.astro
 import Header from './Header.astro';
-// import Footer from './Footer.astro'; // Lo añadiremos después
 
 export interface Props {
 	title: string;
@@ -19,11 +18,15 @@ const { title, description } = Astro.props;
     <meta name="description" content={description}>
     <meta name="generator" content={Astro.generator}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title> {/* LAYCE Construcciones ya no es necesario aquí si se pone en cada página */}
+    <title>{title}</title>
 
-    <!-- El estilo global de main con padding: 1rem se ha eliminado -->
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body class="bg-white text-neutralText">
+<body class="bg-white text-neutralText font-sans"> {/* Usaremos font-sans que configuraremos en Tailwind */}
     <Header />
     <main>
         <slot />

@@ -28,22 +28,18 @@ const heroData = {
     </div>
 
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Contenedor para el texto: centrado en móvil, a la izquierda en md+ */}
         <div class="text-center md:text-left md:w-3/5 lg:w-1/2 xl:w-2/5"> 
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutralText balance-text">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-neutralText balance-text"> {/* Cambiado a font-semibold (Poppins 600) */}
                 <span class="block">{heroData.titleLine1}</span>
                 <span class="block text-primary mt-1 md:mt-2">{heroData.titleLine2}</span>
             </h1>
-            <p class="mt-4 md:mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl text-neutralText/90 balance-text"> {/* mx-auto para centrar el párrafo si es más corto que su contenedor en móvil */}
+            <p class="mt-4 md:mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl font-normal text-neutralText/90 balance-text"> {/* Explicitamente font-normal (Poppins 400) para el cuerpo */}
                 {heroData.subtitle}
             </p>
-            <div class="mt-8 md:mt-10"> {/* El text-center/md:text-left del padre manejará la alineación del botón inline-flex */}
+            <div class="mt-8 md:mt-10">
                 <a
                     href={heroData.ctaLink}
-                    class="inline-flex items-center justify-center px-7 py-3 border border-neutralText/30 text-base font-medium rounded-md text-neutralText bg-white 
-                           hover:bg-gray-50 hover:border-neutralText/50
-                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/70
-                           shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-px"
+                    class="inline-flex items-center justify-center px-7 py-3 border border-transparent text-base font-medium rounded-md text-white bg-secondary hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary/70 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-px" // font-medium (Poppins 500)
                 >
                     {heroData.ctaText}
                 </a>
