@@ -1,0 +1,172 @@
+---
+// src/components/services/TabbedServices.astro
+
+// Definimos los datos aquí por ahora, idealmente vendrían de props o un CMS
+const servicesData = [
+    {
+        id: 'diseno-planificacion',
+        number: '01',
+        sidebarTitle: 'Diseño y Planificación',
+        categoryLabel: 'FASE INICIAL DEL PROYECTO',
+        mainTitle: 'Innovación en Diseño y Estrategia Constructiva',
+        description: 'Desde la conceptualización hasta los planos ejecutivos, nuestro equipo experto utiliza tecnología de vanguardia y un enfoque colaborativo para crear diseños funcionales, estéticos y sostenibles que optimizan recursos y superan expectativas.',
+        imageSrc: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', // Placeholder
+        imageAlt: 'Equipo de arquitectos revisando planos de diseño detallados',
+        learnMoreLink: '#'
+    },
+    {
+        id: 'construccion-integral',
+        number: '02',
+        sidebarTitle: 'Construcción Integral',
+        categoryLabel: 'EJECUCIÓN MAESTRA',
+        mainTitle: 'Materializando Visiones con Precisión',
+        description: 'Abarcamos proyectos residenciales, comerciales e industriales, aplicando los más altos estándares de calidad, seguridad y eficiencia en cada etapa de la construcción para entregar resultados impecables y duraderos.',
+        imageSrc: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', // Placeholder
+        imageAlt: 'Sitio de construcción de un edificio comercial moderno',
+        learnMoreLink: '#'
+    },
+    {
+        id: 'gestion-proyectos',
+        number: '03',
+        sidebarTitle: 'Gestión de Proyectos',
+        categoryLabel: 'LIDERAZGO Y EFICIENCIA (PMI)',
+        mainTitle: 'Dirección Estratégica para el Éxito del Proyecto',
+        description: 'Con metodologías PMI, aseguramos una gestión transparente y optimizada de recursos, tiempos y presupuestos, mitigando riesgos y garantizando que su proyecto se complete satisfactoriamente según lo planificado.',
+        imageSrc: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80', // Placeholder
+        imageAlt: 'Profesionales discutiendo la gestión de un proyecto con gráficos',
+        learnMoreLink: '#'
+    },
+];
+
+const { sectionTitle = "Nuestros Servicios" } = Astro.props;
+---
+
+<section class="py-16 md:py-20 bg-white"> {/* O bg-lightGray si la sección anterior es blanca */}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text">
+                {sectionTitle}
+            </h2>
+        </div>
+
+        <div class="md:grid md:grid-cols-12 md:gap-8 lg:gap-12">
+            {/* Sidebar de Pestañas (Ocupa 3 o 4 de 12 columnas en md+) */}
+            <nav class="md:col-span-4 lg:col-span-3 mb-10 md:mb-0">
+                <ul class="bg-primary text-white rounded-lg shadow-xl p-4 md:p-6 space-y-1" role="tablist" aria-label="Servicios">
+                    {servicesData.map((service, index) => (
+                        <li role="presentation">
+                            <button
+                                type="button"
+                                role="tab"
+                                id={`tab-${service.id}`}
+                                aria-controls={`panel-${service.id}`}
+                                aria-selected={index === 0 ? 'true' : 'false'}
+                                class:list={[
+                                    "w-full text-left px-4 py-3 md:px-5 md:py-4 rounded-md transition-all duration-300 flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-primary focus-visible:ring-white",
+                                    index === 0 ? "bg-white/20 text-white font-semibold" : "hover:bg-white/10 text-blue-100 hover:text-white"
+                                ]}
+                                data-tab-target={service.id}
+                            >
+                                <span class:list={["text-sm font-medium", index === 0 ? "text-secondary" : "text-blue-300 group-hover:text-secondary"]}>{service.number}</span>
+                                <span class="text-base md:text-lg font-medium">{service.sidebarTitle}</span>
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+
+            {/* Paneles de Contenido (Ocupa 8 o 9 de 12 columnas en md+) */}
+            <div class="md:col-span-8 lg:col-span-9 relative">
+                {servicesData.map((service, index) => (
+                    <article
+                        id={`panel-${service.id}`}
+                        role="tabpanel"
+                        tabindex="0"
+                        aria-labelledby={`tab-${service.id}`}
+                        class:list={[
+                            "transition-opacity duration-500 ease-in-out focus:outline-none",
+                            index === 0 ? "opacity-100" : "opacity-0 absolute inset-0 invisible" // Manejo de visibilidad
+                        ]}
+                        data-tab-content={service.id}
+                    >
+                        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+                            <div class="text-center md:text-left">
+                                <span class="block text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">{service.categoryLabel}</span>
+                                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutralText mb-4 balance-text">{service.mainTitle}</h3>
+                                <p class="text-neutralText/80 text-base md:text-lg mb-6 leading-relaxed">{service.description}</p>
+                                {service.learnMoreLink && (
+                                    <a href={service.learnMoreLink} class="inline-flex items-center text-secondary font-medium group">
+                                        Ver Detalles
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                        </svg>
+                                    </a>
+                                )}
+                            </div>
+                            <div class="mt-6 md:mt-0">
+                                <img 
+                                    src={service.imageSrc} 
+                                    alt={service.imageAlt} 
+                                    class="rounded-lg shadow-xl w-full aspect-video md:aspect-[4/3] object-cover" 
+                                    width="600" height="450" loading="lazy"
+                                />
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('[role="tab"][data-tab-target]');
+        const tabContents = document.querySelectorAll('[role="tabpanel"][data-tab-content]');
+        let activeTabButton = document.querySelector('[role="tab"][aria-selected="true"]');
+        let activeTabContent = document.querySelector('[role="tabpanel"]:not(.invisible)');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.tabTarget;
+                const targetContent = document.querySelector(`[data-tab-content="${targetId}"]`);
+
+                if (!targetContent || button === activeTabButton) return;
+
+                // Deactivate current active tab and content
+                if (activeTabButton) {
+                    activeTabButton.setAttribute('aria-selected', 'false');
+                    activeTabButton.classList.remove('bg-white/20', 'text-white', 'font-semibold');
+                    activeTabButton.classList.add('hover:bg-white/10', 'text-blue-100', 'hover:text-white');
+                    activeTabButton.querySelector('span:first-child')?.classList.remove('text-secondary');
+                    activeTabButton.querySelector('span:first-child')?.classList.add('text-blue-300', 'group-hover:text-secondary');
+                }
+                if (activeTabContent) {
+                    activeTabContent.classList.add('opacity-0', 'invisible', 'absolute', 'inset-0');
+                    activeTabContent.classList.remove('opacity-100');
+                }
+                
+                // Activate new tab and content
+                button.setAttribute('aria-selected', 'true');
+                button.classList.add('bg-white/20', 'text-white', 'font-semibold');
+                button.classList.remove('hover:bg-white/10', 'text-blue-100', 'hover:text-white');
+                button.querySelector('span:first-child')?.classList.add('text-secondary');
+                button.querySelector('span:first-child')?.classList.remove('text-blue-300', 'group-hover:text-secondary');
+
+
+                targetContent.classList.remove('opacity-0', 'invisible', 'absolute', 'inset-0');
+                targetContent.classList.add('opacity-100'); // For fade in
+                
+                activeTabButton = button;
+                activeTabContent = targetContent;
+
+                // Optional: focus the new panel for accessibility
+                // targetContent.focus(); 
+            });
+        });
+    });
+</script>
+
+<style>
+    .balance-text { text-wrap: balance; }
+</style>

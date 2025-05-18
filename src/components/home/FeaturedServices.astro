@@ -1,0 +1,98 @@
+---
+// src/components/home/FeaturedServices.astro
+
+// Datos para los servicios destacados
+// Los enlaces apuntan a la página general de servicios por ahora.
+// Podrían ser más específicos con anclas (ej: /servicios#diseno) si esa página se estructura así.
+const servicesData = [
+    {
+        iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 md:w-14 md:h-14 text-primary group-hover:text-secondary transition-colors duration-300"> <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.39S6.944 7.5 6 7.5a1.5 1.5 0 0 0-1.5 1.5v5.172c0 .621.504 1.125 1.125 1.125H9.53l-.025-.025Zm9.538 0H18.5a1.5 1.5 0 0 0 1.5-1.5V8.25h.75a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5h-15a1.5 1.5 0 0 0-1.5 1.5v.75A1.5 1.5 0 0 0 4.5 8.25h.75V15a1.5 1.5 0 0 0 1.5 1.5h5.172M15.965 13.905a1.5 1.5 0 0 0-2.522-2.205l-2.47 2.47a1.5 1.5 0 0 0 0 2.121l2.47 2.47a1.5 1.5 0 0 0 2.12 0l2.47-2.47a1.5 1.5 0 0 0 0-2.12l-2.47-2.47Z" /> </svg>`, // Icono tipo "planos/diseño" (PencilSquare modificado conceptualmente)
+        title: "Diseño y Planificación",
+        description: "Transformamos tus ideas en planos detallados y estrategias de ejecución optimizadas, sentando las bases para un proyecto exitoso.",
+        link: "/servicios",
+        linkText: "Conocer más"
+    },
+    {
+        iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 md:w-14 md:h-14 text-primary group-hover:text-secondary transition-colors duration-300"> <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18A2.25 2.25 0 0 0 4.5 21h15a2.25 2.25 0 0 0 2.25-2.25V5.25A2.25 2.25 0 0 0 19.5 3H4.5A2.25 2.25 0 0 0 2.25 5.25v18Zm15.75-16.5v6.75m-6-6.75v6.75m-6-6.75v6.75M9 21v-2.25a2.25 2.25 0 0 1 2.25-2.25h1.5A2.25 2.25 0 0 1 15 18.75V21M9 12.75h6" /> </svg>`, // Icono tipo "edificio/construcción" (BuildingOffice2Icon)
+        title: "Construcción Integral",
+        description: "Ejecutamos proyectos residenciales, comerciales e industriales con precisión, calidad en materiales y cumplimiento de plazos.",
+        link: "/servicios",
+        linkText: "Conocer más"
+    },
+    {
+        iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 md:w-14 md:h-14 text-primary group-hover:text-secondary transition-colors duration-300"> <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" /> </svg>`, // Icono tipo "gestión/consultoría" (AdjustmentsHorizontalIcon)
+        title: "Consultoría y Gestión",
+        description: "Aplicamos metodologías PMI para una gestión eficiente de recursos y tiempos, garantizando la transparencia y el éxito de tu inversión.",
+        link: "/servicios",
+        linkText: "Conocer más"
+    },
+];
+
+const sectionTitle = "Nuestra Expertise a Tu Servicio";
+const sectionIntro = "Desde la concepción inicial hasta la entrega final, ofrecemos soluciones integrales de construcción con los más altos estándares de calidad y profesionalismo.";
+---
+
+<section class="bg-white py-16 md:py-20 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Título y Texto Introductorio */}
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text">
+                {sectionTitle}
+            </h2>
+            {sectionIntro && (
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutralText/80 balance-text">
+                    {sectionIntro}
+                </p>
+            )}
+        </div>
+
+        {/* Grid de Servicios */}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+            {servicesData.map((service) => (
+                <div class="group bg-lightGray p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <div class="flex-shrink-0 mb-6 text-center md:text-left">
+                        <Fragment set:html={service.iconSvg} />
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-neutralText mb-3 text-center md:text-left">
+                        {service.title}
+                    </h3>
+                    <p class="text-neutralText/80 text-base mb-6 flex-grow text-center md:text-left">
+                        {service.description}
+                    </p>
+                    <div class="mt-auto text-center md:text-right"> {/* Alinea el botón al final, útil si las descripciones varían en altura */}
+                        <a 
+                            href={service.link} 
+                            class="inline-flex items-center text-primary font-medium group-hover:text-secondary transition-colors duration-300"
+                        >
+                            {service.linkText}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        {/* Opcional: CTA general para ver todos los servicios */}
+        <div class="text-center mt-16">
+            <a 
+                href="/servicios" 
+                class="px-8 py-3 rounded-md font-medium bg-primary text-white transition-all duration-300 hover:bg-secondary hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
+            >
+                Ver Todos los Servicios
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .balance-text {
+        text-wrap: balance;
+    }
+    /* Aseguramos que el icono no se encoja demasiado si el SVG no tiene un tamaño inherente fuerte */
+    .group svg {
+        display: inline-block; /* Para centrarlo si es necesario con text-center en su contenedor */
+    }
+</style>

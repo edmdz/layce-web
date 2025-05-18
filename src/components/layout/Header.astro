@@ -44,7 +44,7 @@ const isActive = (href: string) => {
                 <a 
                     href={link.href} 
                     class:list={[
-                        "relative py-2 font-medium text-neutralText transition-colors duration-300 hover:text-primary",
+                        "relative py-2 font-medium text-lg text-neutralText transition-colors duration-300 hover:text-primary",
                         "after:content-[''] after:absolute after:left-1/2 after:right-1/2 after:bottom-0.5",
                         "after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:left-0 hover:after:right-0",
                         { 
@@ -94,7 +94,7 @@ const isActive = (href: string) => {
                 <a 
                     href={link.href} 
                     class:list={[
-                        "block px-5 py-3 text-base font-medium transition-colors duration-200 hover:bg-lightGray",
+                        "block px-5 py-3 text-lg font-medium transition-colors duration-200 hover:bg-lightGray",
                         { 
                             "text-primary bg-lightGray": isActive(link.href),
                             "text-neutralText": !isActive(link.href) 
