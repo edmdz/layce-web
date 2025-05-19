@@ -1,0 +1,22 @@
+---
+import Layout from '../components/layout/Layout.astro';
+
+const pageTitle = "Proyectos Realizados | LAYCE Construcciones";
+const pageDescription = "Explora el portafolio de proyectos exitosos de LAYCE Construcciones, demostrando nuestra experiencia y calidad en cada obra.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-semibold text-primary mb-6 text-center">
+      Proyectos Destacados
+    </h1>
+    <p class="text-lg text-neutralText/80 text-center max-w-2xl mx-auto">
+      Navega a través de nuestra galería de proyectos completados. Cada uno es un testimonio de nuestro compromiso 
+      con la excelencia, la innovación y la satisfacción del cliente.
+    </p>
+    <div class="mt-12 p-8 bg-lightGray rounded-lg text-center">
+      <p class="text-xl font-medium text-neutralText">Galería y detalles de proyectos próximamente.</p>
+      {/* Aquí se implementará una galería de proyectos más completa, posiblemente con filtros */}
+    </div>
+  </div>
+</Layout>
