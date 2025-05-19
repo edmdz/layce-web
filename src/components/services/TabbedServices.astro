@@ -1,7 +1,7 @@
 ---
 // src/components/services/TabbedServices.astro
 
-// Definimos los datos aquí por ahora, idealmente vendrían de props o un CMS
+// ... (servicesData y sectionTitle se mantienen igual)
 const servicesData = [
     {
         id: 'diseno-planificacion',
@@ -41,16 +41,17 @@ const servicesData = [
 const { sectionTitle = "Nuestros Servicios" } = Astro.props;
 ---
 
-<section class="py-16 md:py-20 bg-white"> {/* O bg-lightGray si la sección anterior es blanca */}
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 md:py-20 bg-white">
+    {/* Contenedor más ancho para esta sección específica */}
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16">
             <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text">
                 {sectionTitle}
             </h2>
         </div>
 
-        <div class="md:grid md:grid-cols-12 md:gap-8 lg:gap-12">
-            {/* Sidebar de Pestañas (Ocupa 3 o 4 de 12 columnas en md+) */}
+        <div class="md:grid md:grid-cols-12 md:gap-8 lg:gap-12 xl:gap-16">
+            {/* Sidebar de Pestañas */}
             <nav class="md:col-span-4 lg:col-span-3 mb-10 md:mb-0">
                 <ul class="bg-primary text-white rounded-lg shadow-xl p-4 md:p-6 space-y-1" role="tablist" aria-label="Servicios">
                     {servicesData.map((service, index) => (
@@ -75,7 +76,7 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
                 </ul>
             </nav>
 
-            {/* Paneles de Contenido (Ocupa 8 o 9 de 12 columnas en md+) */}
+            {/* Paneles de Contenido */}
             <div class="md:col-span-8 lg:col-span-9 relative">
                 {servicesData.map((service, index) => (
                     <article
@@ -85,15 +86,26 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
                         aria-labelledby={`tab-${service.id}`}
                         class:list={[
                             "transition-opacity duration-500 ease-in-out focus:outline-none",
-                            index === 0 ? "opacity-100" : "opacity-0 absolute inset-0 invisible" // Manejo de visibilidad
+                            index === 0 ? "opacity-100" : "opacity-0 absolute inset-0 invisible"
                         ]}
                         data-tab-content={service.id}
                     >
-                        <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
-                            <div class="text-center md:text-left">
-                                <span class="block text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">{service.categoryLabel}</span>
-                                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutralText mb-4 balance-text">{service.mainTitle}</h3>
-                                <p class="text-neutralText/80 text-base md:text-lg mb-6 leading-relaxed">{service.description}</p>
+                        {/* Ajuste: Grid interno para texto e imagen */}
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-start">
+                            {/* Columna de texto */}
+                            <div class="text-center lg:text-left">
+                                <span class="block text-primary text-[0.65rem] sm:text-xs font-medium uppercase tracking-wider mb-2 md:mb-3"> {/* Más pequeño y font-medium */}
+                                    {service.categoryLabel}
+                                </span>
+                                <h3 class="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.5rem] font-semibold text-neutralText mb-4 balance-text leading-tight"> {/* Un poco más pequeño el xl */}
+                                    {service.mainTitle}
+                                </h3>
+                                {/* Ajuste: Contenedor para la descripción con indentación/ancho menor */}
+                                <div class="max-w-md mx-auto lg:mx-0 lg:pr-6 xl:pr-8"> {/* Controla el ancho de la descripción */}
+                                    <p class="text-neutralText/80 text-base md:text-lg mb-6 leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                </div>
                                 {service.learnMoreLink && (
                                     <a href={service.learnMoreLink} class="inline-flex items-center text-secondary font-medium group">
                                         Ver Detalles
@@ -103,11 +115,12 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
                                     </a>
                                 )}
                             </div>
-                            <div class="mt-6 md:mt-0">
+                            {/* Columna de imagen */}
+                            <div class="mt-6 lg:mt-0">
                                 <img 
                                     src={service.imageSrc} 
                                     alt={service.imageAlt} 
-                                    class="rounded-lg shadow-xl w-full aspect-video md:aspect-[4/3] object-cover" 
+                                    class="rounded-lg shadow-xl w-full aspect-video md:aspect-[4/3] lg:aspect-[5/4] object-cover"
                                     width="600" height="450" loading="lazy"
                                 />
                             </div>
@@ -128,7 +141,7 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
 
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const targetId = button.dataset.tabTarget;
+                const targetId = (button as HTMLElement).dataset.tabTarget;
                 const targetContent = document.querySelector(`[data-tab-content="${targetId}"]`);
 
                 if (!targetContent || button === activeTabButton) return;
