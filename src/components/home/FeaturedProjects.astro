@@ -1,0 +1,95 @@
+---
+// src/components/home/FeaturedProjects.astro
+
+const projectsData = [
+    {
+        slug: "torre-corporativa-axis",
+        title: "Torre Corporativa Axis",
+        category: "Edificios Comerciales",
+        imageSrc: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", // Placeholder
+        imageAlt: "Impresionante fachada de la Torre Corporativa Axis al atardecer"
+    },
+    {
+        slug: "residencial-los-almendros",
+        title: "Residencial Los Almendros",
+        category: "Complejos Habitacionales",
+        imageSrc: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", // Placeholder
+        imageAlt: "Vista aérea del moderno complejo Residencial Los Almendros con áreas verdes"
+    },
+    {
+        slug: "parque-industrial-innovatech",
+        title: "Parque Industrial InnovaTech",
+        category: "Infraestructura Industrial",
+        imageSrc: "https://images.unsplash.com/photo-1517976575340-7b6a9f3df743?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", // Placeholder
+        imageAlt: "Nave industrial espaciosa y bien iluminada del Parque Industrial InnovaTech"
+    },
+];
+
+const sectionTitle = "Proyectos que Inspiran";
+const sectionIntro = "Un vistazo a cómo transformamos visiones en realidades tangibles, combinando diseño innovador y construcción de excelencia.";
+const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
+---
+
+<section class="bg-lightGray py-16 md:py-20 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Título y Texto Introductorio */}
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text">
+                {sectionTitle}
+            </h2>
+            {sectionIntro && (
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutralText/80 balance-text">
+                    {sectionIntro}
+                </p>
+            )}
+        </div>
+
+        {/* Grid de Proyectos */}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {projectsData.map((project) => (
+                <a 
+                    href={`/proyectos/${project.slug}`} 
+                    class="block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray group relative transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+                    aria-label={`Ver detalles del proyecto ${project.title}`}
+                >
+                    <img 
+                        src={project.imageSrc} 
+                        alt={project.imageAlt} 
+                        class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 ease-in-out group-hover:scale-105" 
+                        loading="lazy"
+                        width="600" height="450"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex flex-col justify-end p-4 md:p-6">
+                        <h3 class="text-white text-lg md:text-xl xl:text-2xl font-semibold mb-1">
+                            {project.title}
+                        </h3>
+                        {project.category && (
+                            <p class="text-gray-300 text-sm md:text-base">
+                                {project.category}
+                            </p>
+                        )}
+                    </div>
+                </a>
+            ))}
+        </div>
+
+        {/* CTA General - Estilo Enlace */}
+        <div class="text-center mt-12 md:mt-16">
+            <a 
+                href="/proyectos" 
+                class="inline-flex items-center text-primary font-medium group text-lg hover:text-secondary transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray"
+            >
+                {ctaLinkText}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .balance-text {
+        text-wrap: balance;
+    }
+</style>
