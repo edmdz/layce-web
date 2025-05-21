@@ -1,0 +1,131 @@
+/* src/styles/utilities/animations.css */
+
+/* --- Standardized Keyframes --- */
+
+@keyframes globalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes globalSlideInUp {
+  from { opacity: 0; transform: translateY(25px); } /* Standardized distance */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes globalSlideInDown {
+  from { opacity: 0; transform: translateY(-25px); } /* Standardized distance */
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes globalSlideInLeft {
+  from { opacity: 0; transform: translateX(-30px); } /* Standardized distance */
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes globalScaleUp {
+  from { opacity: 0; transform: scale(0.95); } /* Standardized scale */
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Base Utility Animation Classes (Initial States) --- */
+
+.util-fade-in,
+.util-slide-in-up,
+.util-slide-in-down,
+.util-slide-in-left,
+.util-scale-up {
+  opacity: 0; /* All animations start by being invisible */
+}
+
+.util-slide-in-up { transform: translateY(25px); }
+.util-slide-in-down { transform: translateY(-25px); }
+.util-slide-in-left { transform: translateX(-30px); }
+.util-scale-up { transform: scale(0.95); }
+
+/* --- Animation Triggering with .is-visible --- */
+/* These apply the actual animation properties when .is-visible is added by JS */
+
+.util-fade-in.is-visible {
+  animation-name: globalFadeIn;
+  animation-fill-mode: forwards;
+}
+
+.util-slide-in-up.is-visible {
+  animation-name: globalSlideInUp;
+  animation-fill-mode: forwards;
+}
+
+.util-slide-in-down.is-visible {
+  animation-name: globalSlideInDown;
+  animation-fill-mode: forwards;
+}
+
+.util-slide-in-left.is-visible {
+  animation-name: globalSlideInLeft;
+  animation-fill-mode: forwards;
+}
+
+.util-scale-up.is-visible {
+  animation-name: globalScaleUp;
+  animation-fill-mode: forwards;
+}
+
+/* --- Common Duration Utilities --- */
+/* Apply these to the same element as the animation type utility */
+
+.util-duration-fast.is-visible { animation-duration: 0.35s; }   /* Example: was 0.5s -> 0.35s */
+.util-duration-normal.is-visible { animation-duration: 0.4s; } /* Example: was 0.6s -> 0.4s */
+.util-duration-medium.is-visible { animation-duration: 0.5s; }  /* Example: was 0.7s -> 0.5s */
+.util-duration-long.is-visible { animation-duration: 0.55s; } /* Example: was 0.8s -> 0.55s */
+
+/* --- Common Delay Utilities --- */
+/* Apply these to the same element */
+
+.util-delay-100ms.is-visible { animation-delay: 0.1s; }
+.util-delay-150ms.is-visible { animation-delay: 0.15s; }
+.util-delay-200ms.is-visible { animation-delay: 0.2s; }
+.util-delay-250ms.is-visible { animation-delay: 0.25s; }
+.util-delay-300ms.is-visible { animation-delay: 0.3s; }
+.util-delay-350ms.is-visible { animation-delay: 0.35s; }
+.util-delay-400ms.is-visible { animation-delay: 0.4s; }
+.util-delay-500ms.is-visible { animation-delay: 0.5s; }
+.util-delay-700ms.is-visible { animation-delay: 0.7s; } /* Example: CompanyBrief CTA */
+
+/* Default timing function if not specified by a more specific rule */
+/* This can be overridden by component-specific needs if necessary, but provides a baseline */
+[class*="util-"][class*="-in"].is-visible, /* Apply to fade-in, slide-in-up etc. */
+[class*="util-"][class*="-up"].is-visible { /* Apply to scale-up etc. */
+  animation-timing-function: ease-out; /* Default timing */
+}
+
+/* --- Prefers Reduced Motion --- */
+/*
+  Targets elements that have a utility animation class AND the .is-visible class,
+  as well as just the base utility class to reset initial states.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .util-fade-in,
+  .util-slide-in-up,
+  .util-slide-in-down,
+  .util-slide-in-left,
+  .util-scale-up,
+  .util-fade-in.is-visible,
+  .util-slide-in-up.is-visible,
+  .util-slide-in-down.is-visible,
+  .util-slide-in-left.is-visible,
+  .util-scale-up.is-visible {
+    animation-name: none !important; /* Disable any named animation */
+    animation-duration: 0s !important; /* No duration */
+    animation-delay: 0s !important; /* No delay */
+    animation-fill-mode: none !important; /* Don't hold end state of an animation if it somehow ran */
+    opacity: 1 !important; /* Ensure element is fully visible */
+    transform: none !important; /* Reset any transforms (translate, scale) */
+  }
+
+  /*
+    If there are any specific initial states set by utility classes
+    that are not transforms or opacity (e.g. filter, background-color transitions),
+    they might need explicit resetting here too.
+    For the current set of utilities (opacity, transform), the above is comprehensive.
+  */
+}

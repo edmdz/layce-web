@@ -4,7 +4,7 @@
 const heroData = {
     titleLine1: "ESPACIOS FUNCIONALES",
     titleLine2: "Y SOSTENIBLES",
-    subtitle: "Transformamos visiones en estructuras sólidas y perdurables. Descubre la excelencia en cada detalle.",
+    subtitle: "Donde la eficiencia se encuentra con la elegancia, y el valor con la confianza.",
     ctaText: "Conoce nuestros proyectos",
     ctaLink: "/proyectos",
     backgroundImage: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80", 
@@ -30,13 +30,13 @@ const heroData = {
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center md:text-left md:w-3/5 lg:w-1/2 xl:w-2/5"> 
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-neutralText balance-text"> {/* Cambiado a font-semibold (Poppins 600) */}
-                <span class="block">{heroData.titleLine1}</span>
-                <span class="block text-primary mt-1 md:mt-2">{heroData.titleLine2}</span>
+                <span class="block scroll-animate util-slide-in-up util-duration-normal">{heroData.titleLine1}</span>
+                <span class="block text-primary mt-1 md:mt-2 scroll-animate util-slide-in-up util-duration-normal util-delay-150ms">{heroData.titleLine2}</span>
             </h1>
-            <p class="mt-4 md:mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl font-normal text-neutralText/90 balance-text"> {/* Explicitamente font-normal (Poppins 400) para el cuerpo */}
+            <p class="mt-4 md:mt-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl font-normal text-neutralText/90 balance-text scroll-animate util-slide-in-up util-duration-normal util-delay-350ms"> {/* Explicitamente font-normal (Poppins 400) para el cuerpo */}
                 {heroData.subtitle}
             </p>
-            <div class="mt-8 md:mt-10">
+            <div class="mt-8 md:mt-10 scroll-animate util-scale-up util-duration-fast util-delay-500ms">
                 <a
                     href={heroData.ctaLink}
                     class="inline-flex items-center justify-center px-7 py-3 border border-transparent text-base font-medium rounded-md text-white bg-secondary hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary/70 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-px" // font-medium (Poppins 500)
@@ -52,20 +52,6 @@ const heroData = {
     .balance-text {
         text-wrap: balance;
     }
-
-    .container > div:first-child > * { 
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .container > div:first-child > h1 { animation-delay: 0.2s; }
-    .container > div:first-child > p { animation-delay: 0.4s; }
-    .container > div:first-child > div:last-of-type { animation-delay: 0.6s; }
-
-    @keyframes fadeInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+    /* All component-specific animation keyframes, classes, and media queries have been removed. */
+    /* These are now handled by global utility classes in src/styles/utilities/animations.css */
 </style>

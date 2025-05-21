@@ -1,3 +1,5 @@
+@import './utilities/animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

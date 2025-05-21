@@ -45,14 +45,14 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
     {/* Contenedor más ancho para esta sección específica */}
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text">
+            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text scroll-animate util-slide-in-down util-duration-medium util-delay-200ms">
                 {sectionTitle}
             </h2>
         </div>
 
         <div class="md:grid md:grid-cols-12 md:gap-8 lg:gap-12 xl:gap-16">
             {/* Sidebar de Pestañas */}
-            <nav class="md:col-span-4 lg:col-span-3 mb-10 md:mb-0">
+            <nav class="md:col-span-4 lg:col-span-3 mb-10 md:mb-0 scroll-animate util-slide-in-left util-duration-medium util-delay-300ms">
                 <ul class="bg-primary text-white rounded-lg shadow-xl p-4 md:p-6 space-y-1" role="tablist" aria-label="Servicios">
                     {servicesData.map((service, index) => (
                         <li role="presentation">
@@ -85,7 +85,7 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
                         tabindex="0"
                         aria-labelledby={`tab-${service.id}`}
                         class:list={[
-                            "transition-opacity duration-500 ease-in-out focus:outline-none",
+                            "transition-opacity duration-500 ease-in-out focus:outline-none scroll-animate util-scale-up util-duration-normal util-delay-400ms",
                             index === 0 ? "opacity-100" : "opacity-0 absolute inset-0 invisible"
                         ]}
                         data-tab-content={service.id}
@@ -182,4 +182,6 @@ const { sectionTitle = "Nuestros Servicios" } = Astro.props;
 
 <style>
     .balance-text { text-wrap: balance; }
+    /* All component-specific animation keyframes, classes, and media queries have been removed. */
+    /* These are now handled by global utility classes in src/styles/utilities/animations.css */
 </style>
