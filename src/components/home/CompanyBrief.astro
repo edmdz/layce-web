@@ -30,7 +30,7 @@ const allBulletPoints = [experienceBullet, ...briefData.bulletPoints];
             {/* Columna Izquierda: Imagen y Decoración Azul */}
             <div class="lg:col-span-5 relative mb-12 lg:mb-0">
                 {/* Contenedor B: para imagen y figuras. Controla el padding para el "marco" en desktop */}
-                <div class="relative mx-auto max-w-md animate-slide-in-left scroll-animate
+                <div class="relative mx-auto max-w-md scroll-animate util-slide-in-left util-duration-long
                             pt-6 sm:pt-8 md:pt-10 
                             lg:max-w-none lg:mx-0 lg:pt-12 xl:lg:pt-16 lg:pl-8 xl:lg:pl-12"> {/* Ajustado padding para desktop */}
                     
@@ -73,15 +73,15 @@ const allBulletPoints = [experienceBullet, ...briefData.bulletPoints];
             {/* Columna Derecha: Texto (sin cambios significativos) */}
             <div class="lg:col-span-7 text-center lg:text-left">
                 <h2 class="text-3xl md:text-4xl lg:text-[2.8rem] xl:text-5xl font-semibold text-neutralText balance-text leading-tight">
-                    <span class="block animate-brief-title1 scroll-animate">{briefData.titleLine1}</span>
-                    <span class="block text-primary mt-1 md:mt-2 animate-brief-title2 scroll-animate">{briefData.titleLine2}</span>
+                    <span class="block scroll-animate util-slide-in-up util-duration-normal util-delay-150ms">{briefData.titleLine1}</span>
+                    <span class="block text-primary mt-1 md:mt-2 scroll-animate util-slide-in-up util-duration-normal util-delay-250ms">{briefData.titleLine2}</span>
                 </h2>
-                <p class="mt-6 text-lg md:text-xl text-neutralText/90 balance-text leading-relaxed animate-brief-intro scroll-animate">
+                <p class="mt-6 text-lg md:text-xl text-neutralText/90 balance-text leading-relaxed scroll-animate util-slide-in-up util-duration-medium util-delay-400ms">
                     {briefData.introParagraph}
                 </p>
                 <ul class="mt-8 space-y-4 text-left text-neutralText/90 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
                     {allBulletPoints.map(point => (
-                        <li class="flex items-start animate-brief-bullet scroll-animate">
+                        <li class="flex items-start scroll-animate util-slide-in-up util-duration-fast util-delay-500ms">
                             <svg class="flex-shrink-0 h-6 w-6 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
@@ -89,7 +89,7 @@ const allBulletPoints = [experienceBullet, ...briefData.bulletPoints];
                         </li>
                     ))}
                 </ul>
-                <div class="mt-10 animate-brief-cta scroll-animate">
+                <div class="mt-10 scroll-animate util-fade-in util-duration-fast util-delay-700ms">
                     <a 
                         href={briefData.ctaLink} 
                         class="inline-flex items-center text-primary font-medium group text-lg hover:text-secondary transition-colors duration-300"
@@ -109,116 +109,6 @@ const allBulletPoints = [experienceBullet, ...briefData.bulletPoints];
     .balance-text {
         text-wrap: balance;
     }
-
-    @keyframes slideInLeftFade {
-        /* 0% handled by base class */
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInFadeUpBrief { 
-        /* 0% handled by base class */
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInSimple {
-        /* 0% handled by base class */
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .animate-slide-in-left {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    .animate-slide-in-left.is-visible {
-        animation-name: slideInLeftFade;
-        animation-duration: 0.55s;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-    }
-
-    .animate-brief-title1 {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    .animate-brief-title1.is-visible {
-        animation-name: slideInFadeUpBrief;
-        animation-duration: 0.4s;
-        animation-timing-function: ease-out;
-        animation-delay: 0.15s; 
-        animation-fill-mode: forwards;
-    }
-
-    .animate-brief-title2 {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    .animate-brief-title2.is-visible {
-        animation-name: slideInFadeUpBrief;
-        animation-duration: 0.4s;
-        animation-timing-function: ease-out;
-        animation-delay: 0.25s; 
-        animation-fill-mode: forwards;
-    }
-
-    .animate-brief-intro {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    .animate-brief-intro.is-visible {
-        animation-name: slideInFadeUpBrief; 
-        animation-duration: 0.5s;
-        animation-timing-function: ease-out;
-        animation-delay: 0.4s;
-        animation-fill-mode: forwards;
-    }
-
-    .animate-brief-bullet { 
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    .animate-brief-bullet.is-visible {
-        animation-name: slideInFadeUpBrief; 
-        animation-duration: 0.35s;
-        animation-timing-function: ease-out;
-        animation-delay: 0.5s; /* Common delay for all bullets */
-        animation-fill-mode: forwards;
-    }
-
-    .animate-brief-cta {
-        opacity: 0;
-        /* No initial transform for fadeInSimple */
-    }
-    .animate-brief-cta.is-visible {
-        animation-name: fadeInSimple;
-        animation-duration: 0.35s;
-        animation-timing-function: ease-out;
-        animation-delay: 0.7s; 
-        animation-fill-mode: forwards;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .animate-slide-in-left,
-        .animate-brief-title1,
-        .animate-brief-title2,
-        .animate-brief-intro,
-        .animate-brief-bullet,
-        .animate-brief-cta {
-            animation: none;
-            opacity: 1;
-        }
-        .animate-slide-in-left { transform: translateX(0); }
-        .animate-brief-title1,
-        .animate-brief-title2,
-        .animate-brief-intro,
-        .animate-brief-bullet { transform: translateY(0); }
-        /* .animate-brief-cta has no transform to reset */
-    }
+    /* All component-specific animation keyframes, classes, and media queries have been removed. */
+    /* These are now handled by global utility classes in src/styles/utilities/animations.css */
 </style>

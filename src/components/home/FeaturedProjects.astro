@@ -34,11 +34,11 @@ const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título y Texto Introductorio */}
         <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text animate-projects-title scroll-animate">
+            <h2 class="text-3xl md:text-4xl font-semibold text-neutralText balance-text scroll-animate util-slide-in-down util-duration-medium util-delay-200ms">
                 {sectionTitle}
             </h2>
             {sectionIntro && (
-                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutralText/80 balance-text animate-projects-intro scroll-animate">
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutralText/80 balance-text scroll-animate util-slide-in-up util-duration-medium util-delay-300ms">
                     {sectionIntro}
                 </p>
             )}
@@ -49,7 +49,7 @@ const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
             {projectsData.map((project) => (
                 <a 
                     href={`/proyectos/${project.slug}`} 
-                    class="block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray group relative transition-all duration-300 ease-in-out transform hover:-translate-y-1 animate-project-card scroll-animate"
+                    class="block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray group relative transition-all duration-300 ease-in-out transform hover:-translate-y-1 scroll-animate util-scale-up util-duration-normal util-delay-400ms"
                     aria-label={`Ver detalles del proyecto ${project.title}`}
                 >
                     <img 
@@ -74,7 +74,7 @@ const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
         </div>
 
         {/* CTA General - Estilo Enlace */}
-        <div class="text-center mt-12 md:mt-16 animate-projects-cta scroll-animate">
+        <div class="text-center mt-12 md:mt-16 scroll-animate util-fade-in util-duration-fast util-delay-500ms">
             <a 
                 href="/proyectos" 
                 class="inline-flex items-center text-primary font-medium group text-lg hover:text-secondary transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray"
@@ -92,97 +92,6 @@ const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
     .balance-text {
         text-wrap: balance;
     }
-
-    @keyframes slideInFadeDownProjects { /* Similar to slideInFadeDown */
-       /* 0% handled by base class */
-       100% {
-           opacity: 1;
-           transform: translateY(0);
-       }
-   }
-
-   @keyframes fadeInDriftUpProjects { /* Similar to slideInFadeUpBrief */
-       /* 0% handled by base class */
-       100% {
-           opacity: 1;
-           transform: translateY(0);
-       }
-   }
-
-   @keyframes fadeInScaleUpProjects { /* Similar to fadeInScaleUp */
-       /* 0% handled by base class */
-       100% {
-           opacity: 1;
-           transform: scale(1);
-       }
-   }
-
-   @keyframes fadeInSimpleProjects { /* Similar to fadeInSimple */
-       /* 0% handled by base class */
-       100% {
-           opacity: 1;
-       }
-   }
-
-   .animate-projects-title {
-       opacity: 0;
-       transform: translateY(-30px);
-   }
-   .animate-projects-title.is-visible {
-       animation-name: slideInFadeDownProjects;
-       animation-duration: 0.5s;
-       animation-timing-function: ease-out;
-       animation-delay: 0.2s; /* Base delay for this section */
-       animation-fill-mode: forwards;
-   }
-
-   .animate-projects-intro {
-       opacity: 0;
-       transform: translateY(20px);
-   }
-   .animate-projects-intro.is-visible {
-       animation-name: fadeInDriftUpProjects;
-       animation-duration: 0.5s;
-       animation-timing-function: ease-out;
-       animation-delay: 0.3s; /* After title */
-       animation-fill-mode: forwards;
-   }
-
-   .animate-project-card {
-       opacity: 0;
-       transform: scale(0.95);
-   }
-   .animate-project-card.is-visible {
-       animation-name: fadeInScaleUpProjects;
-       animation-duration: 0.4s;
-       animation-timing-function: ease-out;
-       animation-delay: 0.4s; /* Common delay for all cards */
-       animation-fill-mode: forwards;
-   }
-
-   .animate-projects-cta {
-       opacity: 0;
-       /* No initial transform for fadeInSimpleProjects */
-   }
-   .animate-projects-cta.is-visible {
-       animation-name: fadeInSimpleProjects;
-       animation-duration: 0.35s;
-       animation-timing-function: ease-out;
-       animation-delay: 0.55s; /* After cards start animating */
-       animation-fill-mode: forwards;
-   }
-
-   @media (prefers-reduced-motion: reduce) {
-     .animate-projects-title,
-     .animate-projects-intro,
-     .animate-project-card,
-     .animate-projects-cta {
-       animation: none;
-       opacity: 1;
-     }
-     .animate-projects-title { transform: translateY(0); }
-     .animate-projects-intro { transform: translateY(0); }
-     .animate-project-card { transform: scale(1); }
-     /* .animate-projects-cta has no transform to reset */
-   }
+    /* All component-specific animation keyframes, classes, and media queries have been removed. */
+    /* These are now handled by global utility classes in src/styles/utilities/animations.css */
 </style>
