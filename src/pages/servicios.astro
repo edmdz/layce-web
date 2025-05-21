@@ -1,5 +1,6 @@
 ---
 import Layout from '../components/layout/Layout.astro';
+import TabbedServices from '../../components/services/TabbedServices.astro';
 
 const pageTitle = "Nuestros Servicios | LAYCE Construcciones";
 const pageDescription = "Descubre la gama completa de servicios de construcción que LAYCE ofrece, desde diseño y planificación hasta ejecución y gestión de proyectos.";
@@ -16,8 +17,6 @@ const pageDescription = "Descubre la gama completa de servicios de construcción
       comerciales e industriales, hasta la consultoría experta y gestión de proyectos bajo metodologías PMI.
     </p>
     {/* Aquí se podría colocar el componente TabbedServices.astro o una versión más detallada */}
-    <div class="mt-12 p-8 bg-lightGray rounded-lg text-center">
-      <p class="text-xl font-medium text-neutralText">Contenido detallado de servicios próximamente.</p>
-    </div>
+    <TabbedServices />
   </div>
 </Layout>
