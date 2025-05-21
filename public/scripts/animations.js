@@ -1,8 +1,8 @@
 // src/scripts/animations.js
 document.addEventListener('DOMContentLoaded', () => {
     const animationOptions = {
-        rootMargin: '0px 0px -10% 0px', // Trigger when element is 10% from bottom of viewport
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        rootMargin: '0px 0px -5% 0px', // New value
+        threshold: 0.05 // New value
     };
 
     const observer = new IntersectionObserver((entries, observerInstance) => {
