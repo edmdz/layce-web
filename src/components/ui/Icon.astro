@@ -1,0 +1,50 @@
+---
+// src/components/ui/Icon.astro
+import { iconPaths } from '../../config/icons.js'; // Ajusta la ruta si es necesario
+
+// Definimos la interfaz de Props con TypeScript
+interface Props {
+    name: keyof typeof iconPaths;
+    class?: string;
+    strokeWidth?: string | number;
+    ariaHidden?: boolean;
+    role?: string; // Mantenemos string por simplicidad, idealmente sería un tipo más específico para ARIA roles
+}
+
+const { 
+    name, 
+    class: className, 
+    strokeWidth = "1.5", 
+    ariaHidden = true, 
+    role = "img", // El valor por defecto "img" es un AriaRole válido.
+    ...rest 
+} = Astro.props as Props;
+const pathData = iconPaths[name];
+
+// Determinar el 'fill' y 'stroke' por defecto basados en si es un icono 'solid' o 'outline'
+// Esto es una heurística simple; podrías necesitar más lógica si usas iconos de estilos mixtos.
+// Heroicons outline por defecto son 'stroke="currentColor"' y 'fill="none"'.
+// Heroicons solid por defecto son 'fill="currentColor"' y 'stroke="none" (o sin stroke).
+// Asumiremos outline por defecto para este componente, como los ejemplos.
+const isSolidIcon = name.toLowerCase().includes('solid'); // Ejemplo de heurística
+const fillValue = isSolidIcon ? "currentColor" : "none";
+const strokeValue = isSolidIcon ? "none" : "currentColor";
+---
+
+{pathData ? (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill={fillValue} 
+        viewBox="0 0 24 24"
+        stroke-width={isSolidIcon ? undefined : strokeWidth}
+        stroke={strokeValue}
+        class:list={["w-6 h-6", className]}
+        aria-hidden={ariaHidden ? 'true' : undefined}
+        role={role as any}
+        {...rest}
+    >
+        <Fragment set:html={pathData} />
+    </svg>
+) : (
+    <span class="text-red-500 text-xs italic" title={`Icono "${name}" no encontrado.`}>IconErr</span>
+)}

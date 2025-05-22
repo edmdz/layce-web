@@ -1,23 +1,42 @@
 ---
 import Layout from '../components/layout/Layout.astro';
+import ServiceDetailBlock from '../components/services/ServiceDetailBlock.astro';
+import { servicesPageData } from '../content/servicesData'; // Importar los datos
 
 const pageTitle = "Nuestros Servicios | LAYCE Construcciones";
 const pageDescription = "Descubre la gama completa de servicios de construcción que LAYCE ofrece, desde diseño y planificación hasta ejecución y gestión de proyectos.";
+
+// Para alternar fondos
+const backgroundClasses = ['bg-white', 'bg-lightGray'];
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <h1 class="text-3xl md:text-4xl font-semibold text-primary mb-6 text-center">
-      Nuestros Servicios
-    </h1>
-    <p class="text-lg text-neutralText/80 text-center max-w-2xl mx-auto">
-      Aquí se detallará la gama completa de servicios ofrecidos por LAYCE Construcciones. 
-      Desde el diseño conceptual y la planificación meticulosa, pasando por la ejecución de obras residenciales, 
-      comerciales e industriales, hasta la consultoría experta y gestión de proyectos bajo metodologías PMI.
-    </p>
-    {/* Aquí se podría colocar el componente TabbedServices.astro o una versión más detallada */}
-    <div class="mt-12 p-8 bg-lightGray rounded-lg text-center">
-      <p class="text-xl font-medium text-neutralText">Contenido detallado de servicios próximamente.</p>
+  {/* Hero Section para la página de Servicios */}
+  <section class="bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold balance-text mb-4">
+        Soluciones Integrales en Construcción
+      </h1>
+      <p class="text-lg md:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto balance-text">
+        En LAYCE, transformamos tus ideas en realidad con experiencia, innovación y un compromiso inquebrantable con la calidad en cada etapa.
+      </p>
     </div>
-  </div>
+  </section>
+
+  {/* Listado de Servicios Detallados */}
+  {servicesPageData.map((service, index) => (
+    <ServiceDetailBlock 
+        id={service.id}
+        title={service.title}
+        iconName={service.iconName}
+        description={service.description}
+        imageSrc={service.imageSrc}
+        imageAlt={service.imageAlt}
+        imagePosition={index % 2 === 0 ? 'left' : 'right'}
+        bulletPoints={service.bulletPoints}
+        cta={service.cta}
+        backgroundColorClass={backgroundClasses[index % 2]}
+    />
+  ))}
+
 </Layout>
