@@ -1,22 +1,116 @@
 ---
 import Layout from '../components/layout/Layout.astro';
+import ProjectCard from '../components/ui/ProjectCard.astro';
+import ImageViewer from '../components/ui/ImageViewer.astro';
+import { proyectos, filtros } from '../content/proyectosData.js';
 
 const pageTitle = "Proyectos Realizados | LAYCE Construcciones";
 const pageDescription = "Explora el portafolio de proyectos exitosos de LAYCE Construcciones, demostrando nuestra experiencia y calidad en cada obra.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <h1 class="text-3xl md:text-4xl font-semibold text-primary mb-6 text-center">
-      Proyectos Destacados
-    </h1>
-    <p class="text-lg text-neutralText/80 text-center max-w-2xl mx-auto">
-      Navega a través de nuestra galería de proyectos completados. Cada uno es un testimonio de nuestro compromiso 
-      con la excelencia, la innovación y la satisfacción del cliente.
-    </p>
-    <div class="mt-12 p-8 bg-lightGray rounded-lg text-center">
-      <p class="text-xl font-medium text-neutralText">Galería y detalles de proyectos próximamente.</p>
-      {/* Aquí se implementará una galería de proyectos más completa, posiblemente con filtros */}
+  <div class="bg-white min-h-screen">
+    {/* Header de la página */}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      {/* Título principal con ícono */}
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <div class="w-12 h-12 bg-gray-300 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-semibold text-neutralText">
+          Proyectos
+        </h1>
+      </div>
+      
+      {/* Subtítulo */}
+      <p class="text-lg text-neutralText/70 text-center max-w-2xl mx-auto mb-12">
+        Explora nuestro portafolio de obras finalizadas
+      </p>
+
+      {/* Filtros */}
+      <div class="flex justify-center mb-12">
+        <div class="flex flex-wrap gap-2 sm:gap-4">
+          {filtros.map((filtro, index) => (
+            <button 
+              data-filter={filtro.value}
+              class:list={[
+                "px-6 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                index === 0 
+                  ? "bg-gray-200 text-neutralText hover:bg-gray-300" 
+                  : "bg-transparent text-neutralText/70 hover:bg-gray-100 hover:text-neutralText"
+              ]}
+            >
+              {filtro.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Grid de proyectos */}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {proyectos.map((proyecto) => (
+          <ProjectCard proyecto={proyecto} />
+        ))}
+      </div>
     </div>
   </div>
+
+  {/* Visores de imágenes para cada proyecto */}
+  {proyectos.map((proyecto) => (
+    <ImageViewer 
+      id={proyecto.id.toString()}
+      images={proyecto.images}
+      projectTitle={proyecto.title}
+    />
+  ))}
+
+  <script>
+    // Script para manejar los filtros
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('[data-filter]');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function(this: HTMLElement) {
+          const filter = this.getAttribute('data-filter');
+          
+          // Actualizar estilos de botones
+          filterButtons.forEach(btn => {
+            btn.classList.remove('bg-gray-200', 'text-neutralText');
+            btn.classList.add('bg-transparent', 'text-neutralText/70');
+          });
+          
+          this.classList.remove('bg-transparent', 'text-neutralText/70');
+          this.classList.add('bg-gray-200', 'text-neutralText');
+          
+          // Filtrar proyectos
+          projectCards.forEach(card => {
+            const htmlCard = card as HTMLElement;
+            const category = htmlCard.getAttribute('data-category');
+            
+            if (filter === 'todos' || category === filter) {
+              htmlCard.style.display = 'block';
+              htmlCard.classList.remove('opacity-0', 'scale-95');
+              htmlCard.classList.add('opacity-100', 'scale-100');
+            } else {
+              htmlCard.classList.remove('opacity-100', 'scale-100');
+              htmlCard.classList.add('opacity-0', 'scale-95');
+              setTimeout(() => {
+                if (htmlCard.classList.contains('opacity-0')) {
+                  htmlCard.style.display = 'none';
+                }
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Añadir clases de transición iniciales
+      projectCards.forEach(card => {
+        card.classList.add('transition-all', 'duration-300', 'opacity-100', 'scale-100');
+      });
+    });
+  </script>
 </Layout>

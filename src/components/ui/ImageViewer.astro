@@ -1,0 +1,217 @@
+---
+// src/components/ui/ImageViewer.astro
+interface Props {
+  id: string;
+  images: Array<{
+    src: string;
+    alt: string;
+  }>;
+  projectTitle: string;
+}
+
+const { id, images, projectTitle } = Astro.props;
+const viewerId = `image-viewer-${id}`;
+---
+
+<!-- Modal backdrop -->
+<div 
+  id={viewerId}
+  class="image-viewer fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby={`${viewerId}-title`}
+>
+  <div class="relative max-w-5xl w-full max-h-full bg-white rounded-2xl overflow-hidden shadow-2xl">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4 md:p-6 border-b border-gray-200 bg-white">
+      <div>
+        <h3 id={`${viewerId}-title`} class="text-xl md:text-2xl font-semibold text-neutralText">
+          {projectTitle}
+        </h3>
+        <p class="text-sm text-neutralText/70 mt-1">
+          <span class="current-image-number">1</span> de {images.length} imágenes
+        </p>
+      </div>
+      <button 
+        class="close-viewer p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary"
+        aria-label="Cerrar visor de imágenes"
+      >
+        <svg class="w-6 h-6 text-neutralText" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Image container -->
+    <div class="relative bg-gray-50">
+      <div class="image-container relative aspect-[16/10] overflow-hidden">
+        {images.map((image, index) => (
+          <img 
+            src={image.src}
+            alt={image.alt}
+            class:list={[
+              "viewer-image absolute inset-0 w-full h-full object-contain transition-opacity duration-300",
+              index === 0 ? "opacity-100" : "opacity-0"
+            ]}
+            data-index={index}
+            loading="lazy"
+          />
+        ))}
+      </div>
+
+      <!-- Navigation buttons -->
+      {images.length > 1 && (
+        <>
+          <button 
+            class="prev-image absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white backdrop-blur-sm"
+            aria-label="Imagen anterior"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          
+          <button 
+            class="next-image absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white backdrop-blur-sm"
+            aria-label="Imagen siguiente"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </>
+      )}
+    </div>
+
+    <!-- Thumbnails -->
+    {images.length > 1 && (
+      <div class="p-4 md:p-6 bg-white border-t border-gray-200">
+        <div class="flex gap-2 overflow-x-auto pb-2">
+          {images.map((image, index) => (
+            <button 
+              class:list={[
+                "thumbnail flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary",
+                index === 0 ? "border-primary" : "border-gray-200 hover:border-gray-300"
+              ]}
+              data-index={index}
+              aria-label={`Ver imagen ${index + 1}`}
+            >
+              <img 
+                src={image.src}
+                alt={`Miniatura ${index + 1}`}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
+<script define:vars={{ viewerId, images }}>
+  // Inicializar el visor de imágenes cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewer = document.getElementById(viewerId);
+    if (!viewer) return;
+
+    const viewerImages = viewer.querySelectorAll('.viewer-image');
+    const thumbnails = viewer.querySelectorAll('.thumbnail');
+    const prevButton = viewer.querySelector('.prev-image');
+    const nextButton = viewer.querySelector('.next-image');
+    const closeButton = viewer.querySelector('.close-viewer');
+    const currentImageNumber = viewer.querySelector('.current-image-number');
+    
+    let currentIndex = 0;
+
+    function showImage(index) {
+      // Ocultar todas las imágenes
+      viewerImages.forEach((img, i) => {
+        img.classList.toggle('opacity-100', i === index);
+        img.classList.toggle('opacity-0', i !== index);
+      });
+
+      // Actualizar thumbnails
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('border-primary', i === index);
+        thumb.classList.toggle('border-gray-200', i !== index);
+      });
+
+      // Actualizar contador
+      if (currentImageNumber) {
+        currentImageNumber.textContent = (index + 1).toString();
+      }
+
+      currentIndex = index;
+    }
+
+    function nextImage() {
+      const newIndex = (currentIndex + 1) % images.length;
+      showImage(newIndex);
+    }
+
+    function prevImage() {
+      const newIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(newIndex);
+    }
+
+    function closeViewer() {
+      viewer.classList.add('hidden');
+      viewer.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function openViewer() {
+      viewer.classList.remove('hidden');
+      viewer.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      showImage(0);
+    }
+
+    // Event listeners
+    if (prevButton) {
+      prevButton.addEventListener('click', prevImage);
+    }
+    
+    if (nextButton) {
+      nextButton.addEventListener('click', nextImage);
+    }
+    
+    if (closeButton) {
+      closeButton.addEventListener('click', closeViewer);
+    }
+
+    // Thumbnail clicks
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => showImage(index));
+    });
+
+    // Keyboard navigation
+    viewer.addEventListener('keydown', function(e) {
+      if (!viewer.classList.contains('hidden')) {
+        switch(e.key) {
+          case 'Escape':
+            closeViewer();
+            break;
+          case 'ArrowLeft':
+            prevImage();
+            break;
+          case 'ArrowRight':
+            nextImage();
+            break;
+        }
+      }
+    });
+
+    // Close on backdrop click
+    viewer.addEventListener('click', function(e) {
+      if (e.target === viewer) {
+        closeViewer();
+      }
+    });
+
+    // Escuchar eventos personalizados para abrir el visor
+    document.addEventListener(`openImageViewer${viewerId.replace('image-viewer-', '')}`, openViewer);
+  });
+</script> 
