@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://layce-construcciones.com/sitemap.xml
+
+# Crawl-delay (opcional, en segundos)
+Crawl-delay: 1
+
+# Bloquear archivos que no queremos indexar
+Disallow: /scripts/
+Disallow: /_astro/
+Disallow: /.git/ 

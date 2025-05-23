@@ -7,9 +7,27 @@ import '../../styles/global.css'; // Importar estilos globales
 export interface Props {
 	title: string;
 	description: string;
+	ogImage?: string;
+	ogType?: string;
+	canonicalUrl?: string;
+	keywords?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+	title, 
+	description, 
+	ogImage = '/images/og-default.jpg',
+	ogType = 'website',
+	canonicalUrl,
+	keywords
+} = Astro.props;
+
+// URL canónica
+const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
+
+// Meta keywords por defecto si no se especifican
+const defaultKeywords = "construcción, infraestructura, puentes, restauración, obras civiles, Monterrey, Nuevo León, México";
+const metaKeywords = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords;
 ---
 
 <!DOCTYPE html>
@@ -17,18 +35,48 @@ const { title, description } = Astro.props;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content={description}>
-    <meta name="generator" content={Astro.generator}>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- SEO Básico -->
     <title>{title}</title>
-
-    <!-- Google Fonts: Poppins -->
+    <meta name="description" content={description}>
+    <meta name="keywords" content={metaKeywords}>
+    <meta name="author" content="LAYCE Construcciones">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href={currentUrl}>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:url" content={currentUrl}>
+    <meta property="og:site_name" content="LAYCE Construcciones">
+    <meta property="og:locale" content="es_MX">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+    
+    <!-- Meta información de empresa -->
+    <meta name="geo.region" content="MX-NL">
+    <meta name="geo.placename" content="Monterrey, Nuevo León">
+    <meta name="geo.position" content="25.6866;-100.3161">
+    <meta name="ICBM" content="25.6866, -100.3161">
+    
+    <!-- Preload crítico -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta name="generator" content={Astro.generator}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-white text-neutralText font-sans"> {/* Usaremos font-sans que configuraremos en Tailwind */}
+<body class="bg-white text-neutralText font-sans">
     <Header />
     <main>
         <slot />

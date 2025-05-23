@@ -5,46 +5,96 @@ import ImageViewer from '../components/ui/ImageViewer.astro';
 import { proyectos } from '../content/proyectosData.js';
 
 const pageTitle = "Proyectos Realizados | LAYCE Construcciones";
-const pageDescription = "Explora el portafolio de proyectos exitosos de LAYCE Construcciones, demostrando nuestra experiencia y calidad en cada obra.";
+const pageDescription = "Explora el portafolio de proyectos exitosos de LAYCE Construcciones: puentes, restauración monumental, obras civiles y más. Calidad demostrada en cada construcción.";
+const keywords = "portafolio construcción, proyectos realizados, puentes, restauración monumental, obras civiles, bacheo vialidades, urbanización";
+
+// Generar datos estructurados JSON-LD
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Proyectos Realizados - LAYCE Construcciones",
+  "description": pageDescription,
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": proyectos.length,
+    "itemListElement": proyectos.map((proyecto, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "@id": `#proyecto-${proyecto.id}`,
+        "name": proyecto.title,
+        "description": proyecto.description,
+        "locationCreated": {
+          "@type": "Place",
+          "name": proyecto.location,
+          "addressRegion": "Nuevo León",
+          "addressCountry": "México"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "LAYCE Construcciones"
+        }
+      }
+    }))
+  }
+};
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout 
+  title={pageTitle} 
+  description={pageDescription}
+  keywords={keywords}
+  ogType="website"
+>
+  <!-- Datos estructurados JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+
   <div class="bg-white min-h-screen">
-    {/* Header de la página */}
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      {/* Título principal mejorado con estilo visual */}
+    <!-- Header de la página -->
+    <header class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <!-- Título principal mejorado con estilo visual -->
       <div class="text-center mb-16">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-lg mb-6">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-lg mb-6 scroll-animate util-scale-up util-duration-medium">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
           </svg>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutralText mb-4">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutralText mb-4 scroll-animate util-slide-in-up util-duration-normal util-delay-150ms">
           Nuestros <span class="text-primary">Proyectos</span>
         </h1>
-        <p class="text-xl text-neutralText/70 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-xl text-neutralText/70 max-w-3xl mx-auto leading-relaxed scroll-animate util-slide-in-up util-duration-normal util-delay-250ms">
           Explora nuestro portafolio de obras finalizadas que demuestran nuestra 
           <span class="text-primary font-medium">experiencia y calidad</span> en cada construcción
         </p>
-        
-        {/* Línea decorativa */}
-        <div class="flex items-center justify-center mt-8">
-          <div class="w-12 h-0.5 bg-gradient-to-r from-transparent to-primary"></div>
-          <div class="w-3 h-3 bg-primary rounded-full mx-4"></div>
-          <div class="w-12 h-0.5 bg-gradient-to-l from-transparent to-primary"></div>
-        </div>
       </div>
+    </header>
 
-      {/* Grid de proyectos */}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {proyectos.map((proyecto) => (
-          <ProjectCard proyecto={proyecto} />
-        ))}
-      </div>
-    </div>
+    <!-- Grid de proyectos -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section aria-labelledby="proyectos-heading">
+        <h2 id="proyectos-heading" class="sr-only">Portafolio de proyectos realizados</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {proyectos.map((proyecto, index) => {
+            // Generar delay escalonado para cada proyecto (máximo 500ms)
+            const delays = ['100ms', '150ms', '200ms', '250ms', '300ms', '350ms'];
+            const delayClass = `util-delay-${delays[index % delays.length]}`;
+            
+            return (
+              <article 
+                class={`scroll-animate util-slide-in-up util-duration-normal ${delayClass}`}
+                id={`proyecto-${proyecto.id}`}
+              >
+                <ProjectCard proyecto={proyecto} />
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    </main>
   </div>
 
-  {/* Visores de imágenes para cada proyecto */}
+  <!-- Visores de imágenes para cada proyecto -->
   {proyectos.map((proyecto) => (
     <ImageViewer 
       id={proyecto.id.toString()}
