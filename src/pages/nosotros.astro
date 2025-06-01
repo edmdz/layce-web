@@ -2,21 +2,273 @@
 import Layout from '../components/layout/Layout.astro';
 
 const pageTitle = "Sobre Nosotros | LAYCE Construcciones";
-const pageDescription = "Conoce la historia, misión, visión y valores de LAYCE Construcciones, una empresa comprometida con la excelencia y la innovación en la industria.";
+const pageDescription = "Conoce la misión, visión, valores y el liderazgo de LAYCE Construcciones, una empresa dedicada a la creación de espacios funcionales, innovadores y sostenibles en México.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <h1 class="text-3xl md:text-4xl font-semibold text-primary mb-6 text-center">
-      Nuestra Empresa
-    </h1>
-    <p class="text-lg text-neutralText/80 text-center max-w-2xl mx-auto">
-      En LAYCE Construcciones, combinamos años de experiencia con un enfoque moderno para entregar proyectos 
-      que no solo cumplen, sino que superan las expectativas. Conoce más sobre nuestro equipo, nuestra filosofía y 
-      los valores que nos guían.
-    </p>
-    <div class="mt-12 p-8 bg-lightGray rounded-lg text-center">
-      <p class="text-xl font-medium text-neutralText">Información detallada sobre la empresa, misión, visión, valores, equipo e historia próximamente.</p>
+  <div class="bg-white min-h-screen overflow-hidden">
+    
+    <section class="bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold balance-text mb-4">
+          SOBRE <span class="text-white">NOSOTROS</span>
+        </h1>
+        <p class="text-lg md:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto balance-text">
+          Creando espacios funcionales, innovadores y sostenibles con compromiso y calidad.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden scroll-animate util-slide-in-up util-duration-normal">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-bl-full"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div>
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-blue-600 rounded-2xl shadow-lg mb-6">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-neutralText mb-6">
+                  Liderazgo con <span class="text-primary">experiencia</span>
+                </h2>
+                <p class="text-lg text-neutralText/80 leading-relaxed">
+                  LAYCE Construcciones es liderada por Arquitectos profesionales con más de 15 años de experiencia en el sector de la construcción. Están especializados en urbanización, obra civil, acabados, infraestructuras y gestión de proyectos. Su trayectoria se distingue por la ejecución de proyectos de alto impacto, donde la calidad, la precisión y el compromiso con el cliente son la prioridad.
+                </p>
+              </div>
+              
+              <div class="relative">
+                <div class="bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-2xl p-8">
+                  <div class="text-center">
+                    <div class="text-5xl font-bold text-primary mb-2">15+</div>
+                    <p class="text-neutralText/70 font-medium">Años de experiencia</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                      <div class="text-2xl font-bold text-primary">10+</div>
+                      <p class="text-sm text-neutralText/70">Proyectos destacados</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                      <div class="text-2xl font-bold text-primary">100%</div>
+                      <p class="text-sm text-neutralText/70">Calidad y Compromiso</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="scroll-animate util-slide-in-left util-duration-normal">
+              <h2 class="text-4xl md:text-5xl font-bold text-neutralText mb-8">
+                Nuestra <span class="text-primary">Misión</span>
+              </h2>
+              <div class="space-y-6">
+                <p class="text-lg text-neutralText/80 leading-relaxed">
+                  En LAYCE Construcciones, nos especializamos en la creación de espacios funcionales, innovadores y sostenibles, combinando calidad, compromiso y respeto por el medio ambiente.
+                </p>
+                <p class="text-lg text-neutralText/80 leading-relaxed">
+                  Inspirados en nuestros valores familiares y en el legado de quienes nos precedieron, buscamos fortalecer la comunidad a través de proyectos que mejoren la convivencia y eleven la calidad de vida de nuestros clientes.
+                </p>
+              </div>
+              
+              <div class="mt-8 flex items-center space-x-4">
+                <div class="w-12 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"></div>
+                <span class="text-primary font-medium">Transformando comunidades</span>
+              </div>
+            </div>
+            
+            <div class="scroll-animate util-slide-in-right util-duration-normal">
+              <div class="relative">
+                <div class="bg-gradient-to-br from-primary/10 via-blue-500/10 to-purple-500/10 rounded-3xl p-8 h-80">
+                  <div class="h-full flex items-center justify-center">
+                    <div class="text-center">
+                      <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary to-blue-600 rounded-2xl shadow-2xl mb-6">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-2xl font-bold text-neutralText mb-2">Valores Familiares y Legado</h3>
+                      <p class="text-neutralText/70">Inspiración que impulsa cada proyecto.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-500 rounded-full"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-neutralText mb-6 scroll-animate util-slide-in-up util-duration-normal">
+            Nuestros <span class="text-primary">valores</span>
+          </h2>
+          {/* Texto actualizado conforme al PDF  */}
+          <p class="text-xl text-neutralText/70 max-w-2xl mx-auto scroll-animate util-slide-in-up util-duration-normal util-delay-200ms">
+            Los valores de LAYCE reflejan nuestro compromiso con la excelencia y nuestras raíces familiares.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Confianza - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-100ms group">
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path> </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Confianza</h3>
+              <p class="text-neutralText/70">Construimos relaciones sólidas y transparentes.</p>
+            </div>
+          </div>
+
+          {/* Honestidad - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-150ms group">
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path> </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Honestidad</h3>
+              <p class="text-neutralText/70">Actuamos con integridad en cada proyecto.</p>
+            </div>
+          </div>
+
+          {/* Lealtad - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-200ms group">
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path> </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Lealtad</h3>
+              <p class="text-neutralText/70">Compromiso con nuestros clientes y colaboradores.</p>
+            </div>
+          </div>
+          
+          {/* Puntualidad - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-250ms group md:col-span-1 lg:col-start-1 lg:col-span-1"> {/* Ajustado para grid */}
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Puntualidad</h3>
+              <p class="text-neutralText/70">Cumplimos cada entrega con precisión y eficiencia.</p>
+            </div>
+          </div>
+
+          {/* Responsabilidad - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-300ms group md:col-span-1 lg:col-span-1">
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path> {/* Icono diferente para Responsabilidad */}
+                 </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Responsabilidad</h3>
+              <p class="text-neutralText/70">Nos hacemos cargo de cada obra con profesionalismo.</p>
+            </div>
+          </div>
+          
+          {/* Respeto - Texto del PDF  */}
+          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 scroll-animate util-slide-in-up util-duration-normal util-delay-350ms group md:col-span-2 lg:col-span-1"> {/* Ajustado para grid */}
+            <div class="relative">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path> </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-neutralText mb-3">Respeto</h3>
+              <p class="text-neutralText/70">Valoramos a las personas y el entorno en el que trabajamos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-neutralText mb-6 scroll-animate util-slide-in-up util-duration-normal">
+              Nuestra <span class="text-primary">Visión y Enfoque</span> {/* Título ajustado */}
+            </h2>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6 scroll-animate util-slide-in-left util-duration-normal">
+              {/* Textos actualizados basados en la Visión y enfoque innovador del PDF  4] */}
+              <div class="flex items-start space-x-4 p-6 bg-gradient-to-r from-primary/5 to-primary/5 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary rounded-xl flex items-center justify-center shadow-lg"> <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path></svg></div>
+                <div>
+                  <h3 class="text-xl font-bold text-neutralText mb-2">Proyección Internacional</h3>
+                  <p class="text-neutralText/70">Ser una empresa referente en México con proyección internacional, basada en el crecimiento ordenado y la generación de empleos.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 p-6 bg-gradient-to-r from-primary/5 to-primary/5 rounded-2xl hover:shadow-lg transition-all duration-300">
+                 <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary rounded-xl flex items-center justify-center shadow-lg"> <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2V7a1 1 0 00-1-1H9V5H5v2zm4 8a1 1 0 100-2 1 1 0 000 2z"></path></svg></div>
+                <div>
+                  <h3 class="text-xl font-bold text-neutralText mb-2">Innovación y Metodología PMI</h3> {/* Combinado */}
+                  <p class="text-neutralText/70">Nos enfocamos en la innovación constante, incorporando tecnologías avanzadas como la inteligencia artificial y metodologías de gestión de proyectos como PMI.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4 p-6 bg-gradient-to-r from-primary/5 to-primary/5 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary rounded-xl flex items-center justify-center shadow-lg"> <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M10 1.083A8.917 8.917 0 1018.917 10 8.917 8.917 0 0010 1.083zm0 16.334a7.417 7.417 0 110-14.834 7.417 7.417 0 010 14.834zM10 5.25a.75.75 0 00-.75.75v3.14L7.22 11.22a.75.75 0 101.06 1.06l2.25-2.25A.75.75 0 0010 9.25V6a.75.75 0 00-.75-.75z" clip-rule="evenodd"></path></svg></div>
+                <div>
+                  <h3 class="text-xl font-bold text-neutralText mb-2">Compromiso con la Calidad y Seguridad</h3>
+                  <p class="text-neutralText/70">Garantizamos eficiencia, calidad y sostenibilidad, con cero accidentes laborales en nuestros proyectos.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="scroll-animate util-slide-in-right util-duration-normal">
+              <div class="bg-gradient-to-br from-primary/10 via-blue-500/10 to-purple-500/10 rounded-3xl p-8 h-full flex flex-col justify-center">
+                <div class="text-center mb-8">
+                  <h3 class="text-3xl font-bold text-neutralText mb-4">Logros Destacados</h3>
+                  <p class="text-neutralText/70">Resultados que demuestran nuestro compromiso y capacidad.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-primary mb-2">0</div>
+                    <p class="text-neutralText/70 font-medium">Accidentes laborales</p>
+                  </div>
+                  <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+                    <div class="text-4xl font-bold text-green-500 mb-2">100%</div>
+                    <p class="text-neutralText/70 font-medium">Entrega puntual y calidad</p>
+                  </div>
+                  <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+                    {/* Icono o texto que represente "Desarrollo Urbano" */}
+                    <div class="text-4xl font-bold text-blue-500 mb-2">
+                        <svg class="w-10 h-10 mx-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M5 15h14M5 18h14M9 7h6m-3-2v2"></path></svg>
+                    </div>
+                    <p class="text-neutralText/70 font-medium">Desarrollo Urbano</p>
+                  </div>
+                  <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+                     <div class="text-4xl font-bold text-purple-500 mb-2">AI</div>
+                    <p class="text-neutralText/70 font-medium">Tecnología Avanzada </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+    </section>
+
   </div>
 </Layout>
