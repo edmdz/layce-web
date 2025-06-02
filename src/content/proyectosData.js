@@ -50,7 +50,7 @@ export const proyectos = [
     category: "restauracion",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1539650116574-75c0c6d73673?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+        src: "https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
         alt: "Monumento en Sendero, Escobedo, durante trabajos de mantenimiento"
       },
       {
@@ -92,7 +92,7 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1544966503-7cc4ac7b567d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+        src: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
         alt: "Mantenimiento en Puente Deprimido Sendero, Escobedo"
       },
       {

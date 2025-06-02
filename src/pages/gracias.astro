@@ -1,0 +1,100 @@
+---
+import Layout from "../components/layout/Layout.astro";
+
+const pageTitle = "¡Gracias! | LAYCE Construcciones";
+const pageDescription = "Gracias por contactarnos. Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="bg-white min-h-screen">
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Icono de éxito -->
+          <div
+            class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-lg mb-8 scroll-animate util-scale-up util-duration-medium"
+          >
+            <svg
+              class="w-12 h-12 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- Mensaje principal -->
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutralText mb-6 scroll-animate util-slide-in-up util-duration-normal balance-text"
+          >
+            ¡Gracias!
+          </h1>
+          
+          <p
+            class="text-xl md:text-2xl text-neutralText/80 mb-8 scroll-animate util-slide-in-up util-duration-normal util-delay-150ms balance-text"
+          >
+            El formulario ha sido enviado con éxito.
+          </p>
+
+          <div
+            class="bg-lightGray rounded-2xl p-8 md:p-10 mb-12 scroll-animate util-slide-in-up util-duration-normal util-delay-250ms"
+          >
+            <h2 class="text-2xl font-semibold text-neutralText mb-4">
+              ¿Qué sigue ahora?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-sm">1</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-neutralText mb-2">Revisión</h3>
+                  <p class="text-sm text-neutralText/70">
+                    Revisaremos tu mensaje y la información proporcionada.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-sm">2</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-neutralText mb-2">Contacto</h3>
+                  <p class="text-sm text-neutralText/70">
+                    Nos pondremos en contacto contigo en un plazo de 24-48 horas.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <span class="text-white font-bold text-sm">3</span>
+                </div>
+                <div>
+                  <h3 class="font-medium text-neutralText mb-2">Propuesta</h3>
+                  <p class="text-sm text-neutralText/70">
+                    Te enviaremos una propuesta personalizada para tu proyecto.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .balance-text {
+    text-wrap: balance;
+  }
+</style>
