@@ -29,16 +29,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de excavación para Agua y Drenaje de Monterrey"
+        src: "/src/assets/agua_drenaje/carpeta_1.jpg",
+        alt: "Vista general de los trabajos de Agua y Drenaje en Monterrey"
       },
       {
-        src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Proceso de relleno y compactación en obra civil"
+        src: "/src/assets/agua_drenaje/carpeta_2.jpg",
+        alt: "Excavación y maquinaria en obra de Agua y Drenaje"
       },
       {
-        src: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Maquinaria trabajando en proyecto de AyD Monterrey"
+        src: "/src/assets/agua_drenaje/carpeta_3.jpg",
+        alt: "Proceso de relleno y compactación en proyecto de Agua y Drenaje"
+      },
+      {
+        src: "/src/assets/agua_drenaje/carpeta_4.jpg",
+        alt: "Supervisión de obra civil en Monterrey para Agua y Drenaje"
+      },
+      {
+        src: "/src/assets/agua_drenaje/carpeta_5.jpg",
+        alt: "Equipo trabajando en infraestructura hidráulica en Monterrey"
       }
     ]
   },
@@ -50,17 +58,25 @@ export const proyectos = [
     category: "restauracion",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Monumento en Sendero, Escobedo, durante trabajos de mantenimiento"
+        src: "/src/assets/monumento_sendero/monumento_sendero_1.jpeg",
+        alt: "Vista general del monumento en Sendero durante el proceso de restauración"
       },
       {
-        src: "https://images.unsplash.com/photo-1548025870-24d3c7e6b90e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Detalle de la restauración del monumento urbano"
+        src: "/src/assets/monumento_sendero/monumento_sendero_4.jpeg",
+        alt: "Monumento en Sendero con avances en la restauración urbana"
       },
       {
-        src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Monumento restaurado en Sendero, Escobedo N.L."
-      }
+        src: "/src/assets/monumento_sendero/monumento_sendero_5.jpeg",
+        alt: "Supervisión final de la restauración del monumento en Sendero"
+      },
+      {
+        src: "/src/assets/monumento_sendero/monumento_sendero_2.jpeg",
+        alt: "Detalle de los trabajos de mantenimiento en el monumento urbano"
+      },
+      {
+        src: "/src/assets/monumento_sendero/monumento_sendero_3.jpeg",
+        alt: "Equipo realizando labores de restauración en Sendero, Escobedo"
+      },
     ]
   },
   {
@@ -71,16 +87,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Construcción de cordones de concreto en Carretera Laredo"
+        src: "/src/assets/cordones_laredo/cordones_laredo_1.jpeg",
+        alt: "Vista general de la construcción de cordones de concreto en Carretera Laredo"
       },
       {
-        src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de obra civil en Av. Monclova, Escobedo"
+        src: "/src/assets/cordones_laredo/cordones_laredo_2.jpeg",
+        alt: "Detalle del proceso de vaciado de concreto en la obra"
       },
       {
-        src: "https://images.unsplash.com/photo-1605902711834-8b11c3e3ef2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vialidad mejorada con nuevos cordones de concreto"
+        src: "/src/assets/cordones_laredo/cordones_laredo_3.jpeg",
+        alt: "Equipo de trabajo realizando labores de infraestructura vial"
+      },
+      {
+        src: "/src/assets/cordones_laredo/cordones_laredo_4.jpeg",
+        alt: "Cordones de concreto recién terminados en la vialidad"
+      },
+      {
+        src: "/src/assets/cordones_laredo/cordones_laredo_5.jpeg",
+        alt: "Supervisión final de la obra en Carretera Laredo"
       }
     ]
   },
@@ -92,16 +116,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Mantenimiento en Puente Deprimido Sendero, Escobedo"
+        src: "/src/assets/deprimido_sendero/Deprimido_final_3.jpeg",
+        alt: "Equipo trabajando en la rehabilitación del puente Sendero"
       },
       {
-        src: "https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de rehabilitación en estructura de puente deprimido"
+        src: "/src/assets/deprimido_sendero/Deprimido_final_1.jpeg",
+        alt: "Vista general del Puente Deprimido Sendero tras el mantenimiento"
       },
       {
-        src: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vista del Puente Deprimido en Sendero tras mantenimiento"
+        src: "/src/assets/deprimido_sendero/Deprimido_final_2.jpeg",
+        alt: "Detalle de los trabajos realizados en el puente deprimido"
+      },
+      {
+        src: "/src/assets/deprimido_sendero/Deprimido_final_4.jpeg",
+        alt: "Avances en la estructura del Puente Deprimido Sendero"
+      },
+      {
+        src: "/src/assets/deprimido_sendero/Deprimido_final_5.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Sendero"
       }
     ]
   },
@@ -113,16 +145,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de bacheo en vialidades de Santiago, N.L."
+        src: "/src/assets/bacheo_santiago/bacheo_4.jpg",
+        alt: "Supervisión y control de calidad en el proceso de bacheo"
       },
       {
-        src: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Reparación de calles en el Municipio de Santiago"
+        src: "/src/assets/bacheo_santiago/bacheo_1.jpg",
+        alt: "Inicio de trabajos de bacheo en vialidades de Santiago, N.L."
       },
       {
-        src: "https://images.unsplash.com/photo-1573883428742-bac2a0dc7b10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vialidad rehabilitada después del programa de bacheo"
+        src: "/src/assets/bacheo_santiago/bacheo_2.jpg",
+        alt: "Aplicación de mezcla asfáltica en calle de Santiago"
+      },
+      {
+        src: "/src/assets/bacheo_santiago/bacheo_3.jpg",
+        alt: "Equipo realizando labores de bacheo en el municipio"
+      },
+      {
+        src: "/src/assets/bacheo_santiago/bacheo_5.jpg",
+        alt: "Vialidad rehabilitada tras el programa de bacheo en Santiago"
       }
     ]
   },
@@ -134,16 +174,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Mantenimiento en Puente Laredo-Juárez, Escobedo"
+        src: "/src/assets/laredo_juarez/Laredo_Juarez_final_1.jpeg",
+        alt: "Vista general del Puente Laredo-Juárez tras el mantenimiento"
       },
       {
-        src: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de rehabilitación estructural en Puente Laredo-Juárez"
+        src: "/src/assets/laredo_juarez/Laredo_Juarez_final_2.jpeg",
+        alt: "Detalle de los trabajos realizados en el puente Laredo-Juárez"
       },
       {
-        src: "https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vista del Puente Laredo-Juárez mejorado"
+        src: "/src/assets/laredo_juarez/Laredo_Juarez_final_3.jpeg",
+        alt: "Equipo trabajando en la rehabilitación del puente Laredo-Juárez"
+      },
+      {
+        src: "/src/assets/laredo_juarez/Laredo_Juarez_final_4.jpeg",
+        alt: "Avances en la estructura del Puente Laredo-Juárez"
+      },
+      {
+        src: "/src/assets/laredo_juarez/Laredo_Juarez_final_5.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Laredo-Juárez"
       }
     ]
   },
@@ -155,16 +203,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Instalación de reflejantes en Puente Sendero-Barragán"
+        src: "/src/assets/reflejantes_sendero_barragan/Reflejantes_Sendero-Barragan_final_1.jpeg",
+        alt: "Vista general de la instalación de reflejantes en Puente Sendero-Barragán"
       },
       {
-        src: "https://images.unsplash.com/photo-1611414374009-51d873c13e5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Puente Sendero-Barragán con nueva señalización reflejante"
+        src: "/src/assets/reflejantes_sendero_barragan/Reflejantes_Sendero-Barragan_final_2.jpeg",
+        alt: "Detalle de los reflejantes instalados en la vialidad"
       },
       {
-        src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Seguridad vial mejorada en Escobedo"
+        src: "/src/assets/reflejantes_sendero_barragan/Reflejantes_Sendero-Barragan_final_3.jpeg",
+        alt: "Equipo trabajando en la colocación de reflejantes en el puente"
+      },
+      {
+        src: "/src/assets/reflejantes_sendero_barragan/Reflejantes_Sendero-Barragan_final_4.jpeg",
+        alt: "Proceso de señalización vial con reflejantes en Sendero-Barragán"
+      },
+      {
+        src: "/src/assets/reflejantes_sendero_barragan/Reflejantes_Sendero-Barragan_final_5.jpeg",
+        alt: "Supervisión final de la instalación de reflejantes en el puente"
       }
     ]
   },
@@ -176,16 +232,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1590725121839-892b458a74fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Mantenimiento general del Puente Raúl Salinas en Escobedo"
+        src: "/src/assets/puente_raul_salinas/Puente_Raul_Salinas_final_2.jpeg",
+        alt: "Detalle de los trabajos realizados en el puente Raúl Salinas"
       },
       {
-        src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos en la estructura del Puente Raúl Salinas"
+        src: "/src/assets/puente_raul_salinas/Puente_Raul_Salinas_final_1.jpeg",
+        alt: "Vista general del Puente Raúl Salinas tras el mantenimiento"
       },
       {
-        src: "https://images.unsplash.com/photo-1616190171082-15e30f4b2e97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Puente Raúl Salinas después de mantenimiento"
+        src: "/src/assets/puente_raul_salinas/Puente_Raul_Salinas_final_4.jpeg",
+        alt: "Avances en la estructura del Puente Raúl Salinas"
+      },
+      {
+        src: "/src/assets/puente_raul_salinas/Puente_Raul_Salinas_final_5.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Raúl Salinas"
+      },
+      {
+        src: "/src/assets/puente_raul_salinas/Puente_Raul_Salinas_final_3.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Raúl Salinas"
       }
     ]
   },
@@ -197,16 +261,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Mantenimiento del Puente Sendero en Escobedo"
+        src: "/src/assets/puente_sendero_escobedo/Sendero_Barragan_final_1.jpeg",
+        alt: "Vista general del Puente Sendero en Escobedo tras el mantenimiento"
       },
       {
-        src: "https://images.unsplash.com/photo-1599582909646-b43b6ee72afd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Estructura del Puente Sendero durante mantenimiento"
+        src: "/src/assets/puente_sendero_escobedo/Sendero_Barragan_final_2.jpeg",
+        alt: "Detalle de los trabajos realizados en el puente Sendero"
       },
       {
-        src: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vista del Puente Sendero rehabilitado"
+        src: "/src/assets/puente_sendero_escobedo/Sendero_Barragan_final_3.jpeg",
+        alt: "Equipo trabajando en la rehabilitación del puente Sendero"
+      },
+      {
+        src: "/src/assets/puente_sendero_escobedo/Sendero_Barragan_final_4.jpeg",
+        alt: "Avances en la estructura del Puente Sendero en Escobedo"
+      },
+      {
+        src: "/src/assets/puente_sendero_escobedo/Sendero_Barragan_final_5.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Sendero, Escobedo"
       }
     ]
   },
@@ -218,16 +290,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Instalación de reflejantes en Puente Laredo-Juárez"
+        src: "/src/assets/reflejantes_laredo_juarez/WhatsApp Image 2025-02-17 at 10.24.19 (1).jpeg",
+        alt: "Vista general de la instalación de reflejantes en Puente Laredo-Juárez"
       },
       {
-        src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Seguridad vial mejorada en Puente Laredo-Juárez con reflejantes"
+        src: "/src/assets/reflejantes_laredo_juarez/WhatsApp Image 2025-02-17 at 10.24.19 (3).jpeg",
+        alt: "Detalle de los reflejantes instalados en el puente Laredo-Juárez"
       },
       {
-        src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Detalle de reflejantes instalados en Escobedo"
+        src: "/src/assets/reflejantes_laredo_juarez/WhatsApp Image 2025-02-17 at 10.24.20 (1).jpeg",
+        alt: "Equipo trabajando en la colocación de reflejantes en el puente"
+      },
+      {
+        src: "/src/assets/reflejantes_laredo_juarez/WhatsApp Image 2025-02-17 at 10.24.20 (2).jpeg",
+        alt: "Proceso de señalización vial con reflejantes en Laredo-Juárez"
+      },
+      {
+        src: "/src/assets/reflejantes_laredo_juarez/WhatsApp Image 2025-02-17 at 10.24.20 (3).jpeg",
+        alt: "Supervisión final de la instalación de reflejantes en el puente Laredo-Juárez"
       }
     ]
   },
@@ -239,16 +319,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1591845715186-d473b1d4dc6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Vista principal del Puente Sendero-Colombia en mantenimiento"
+        src: "/src/assets/puente_sendero_colombia/Puente_Colombia_final_1.jpeg",
+        alt: "Vista general del Puente Sendero-Colombia tras el mantenimiento"
       },
       {
-        src: "https://images.unsplash.com/photo-1598875791852-8bb153828505?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Trabajos de mantenimiento en el puente Sendero-Colombia"
+        src: "/src/assets/puente_sendero_colombia/Puente_Colombia_final_2.jpeg",
+        alt: "Detalle de los trabajos realizados en el puente Sendero-Colombia"
       },
       {
-        src: "https://images.unsplash.com/photo-1578926314433-e2789279f4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Estructura del puente Sendero-Colombia desde abajo"
+        src: "/src/assets/puente_sendero_colombia/Puente_Colombia_final_3.jpeg",
+        alt: "Equipo trabajando en la rehabilitación del puente Sendero-Colombia"
+      },
+      {
+        src: "/src/assets/puente_sendero_colombia/Puente_Colombia_final_4.jpeg",
+        alt: "Avances en la estructura del Puente Sendero-Colombia"
+      },
+      {
+        src: "/src/assets/puente_sendero_colombia/Puente_Colombia_final_5.jpeg",
+        alt: "Supervisión final del mantenimiento en el puente Sendero-Colombia"
       }
     ]
   },
@@ -260,16 +348,24 @@ export const proyectos = [
     category: "puentes",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+        src: "/src/assets/luminarias_raul_salinas/luminarias_raul_salinas_4.jpeg",
+        alt: "Proceso de mantenimiento de luminarias en el puente Raúl Salinas"
+      },
+      {
+        src: "/src/assets/luminarias_raul_salinas/luminarias_raul_salinas_1.jpeg",
         alt: "Mantenimiento de luminarias en Puente Raúl Salinas"
       },
       {
-        src: "https://images.unsplash.com/photo-1592503254549-d83d24a4dfab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+        src: "/src/assets/luminarias_raul_salinas/luminarias_raul_salinas_2.jpeg",
         alt: "Trabajos de iluminación en infraestructura vial de Escobedo"
       },
       {
-        src: "https://images.unsplash.com/photo-1517009087028-906b8a915131?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+        src: "/src/assets/luminarias_raul_salinas/luminarias_raul_salinas_3.jpeg",
         alt: "Luminarias del Puente Raúl Salinas funcionando correctamente"
+      },
+      {
+        src: "/src/assets/luminarias_raul_salinas/luminarias_raul_salinas_5.jpeg",
+        alt: "Supervisión final de la instalación de luminarias en el puente Raúl Salinas"
       }
     ]
   },
@@ -281,16 +377,24 @@ export const proyectos = [
     category: "otros",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Instalación de reflejantes en el Puente Raúl Salinas"
+        src: "/src/assets/reflejantes_puente_raul_salinas/Reflejantes_Raul_Salinas_final_1.jpeg",
+        alt: "Vista general de la instalación de reflejantes en el Puente Raúl Salinas"
       },
       {
-        src: "https://images.unsplash.com/photo-1590725121839-892b458a74fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Elementos reflejantes mejorando la seguridad vial en Escobedo"
+        src: "/src/assets/reflejantes_puente_raul_salinas/Reflejantes_Raul_Salinas_final_2.jpeg",
+        alt: "Detalle de los reflejantes instalados en el puente Raúl Salinas"
       },
       {
-        src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Puente Raúl Salinas con nueva señalización reflejante"
+        src: "/src/assets/reflejantes_puente_raul_salinas/Reflejantes_Raul_Salinas_final_3.jpeg",
+        alt: "Equipo trabajando en la colocación de reflejantes en el puente"
+      },
+      {
+        src: "/src/assets/reflejantes_puente_raul_salinas/Reflejantes_Raul_Salinas_final_4.jpeg",
+        alt: "Proceso de señalización vial con reflejantes en Raúl Salinas"
+      },
+      {
+        src: "/src/assets/reflejantes_puente_raul_salinas/Reflejantes_Raul_Salinas_final_5.jpeg",
+        alt: "Supervisión final de la instalación de reflejantes en el puente Raúl Salinas"
       }
     ]
   }

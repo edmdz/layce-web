@@ -3,26 +3,29 @@
 
 const projectsData = [
     {
-        slug: "torre-corporativa-axis",
-        title: "Torre Corporativa Axis",
-        category: "Edificios Comerciales",
-        imageSrc: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", // Placeholder
-        imageAlt: "Impresionante fachada de la Torre Corporativa Axis al atardecer"
+        id: 3, // Monumento en Sendero
+        slug: "monumento-en-sendero",
+        title: "Monumento en Sendero",
+        category: "Restauración",
+        imageSrc: "/src/assets/monumento_sendero/monumento_sendero_2.jpeg",
+        imageAlt: "Vista general del monumento en Sendero durante el proceso de restauración"
     },
     {
-        slug: "residencial-los-almendros",
-        title: "Residencial Los Almendros",
-        category: "Complejos Habitacionales",
-        imageSrc: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80", // Placeholder
-        imageAlt: "Vista aérea del moderno complejo Residencial Los Almendros con áreas verdes"
+        id: 7, // Puente Laredo-Juárez
+        slug: "puente-laredo-juarez",
+        title: "Puente Laredo-Juárez",
+        category: "Mantenimiento",
+        imageSrc: "/src/assets/laredo_juarez/Laredo_Juarez_final_1.jpeg",
+        imageAlt: "Vista general del Puente Laredo-Juárez tras el mantenimiento"
     },
     {
-        slug: "parque-industrial-innovatech",
-        title: "Parque Industrial InnovaTech",
-        category: "Infraestructura Industrial",
-        imageSrc: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80", 
-        imageAlt: "Vista aérea de un moderno parque industrial con naves y infraestructura logística."
-    },
+        id: 4, // Cordones Concreto (Carr. Laredo)
+        slug: "cordones-concreto-laredo",
+        title: "Cordones Concreto (Carr. Laredo)",
+        category: "Infraestructura",
+        imageSrc: "/src/assets/cordones_laredo/cordones_laredo_1.jpeg",
+        imageAlt: "Vista general de la construcción de cordones de concreto en Carretera Laredo"
+    }
 ];
 
 const sectionTitle = "Proyectos que Inspiran";
@@ -48,7 +51,7 @@ const ctaLinkText = "Explorar Todos los Proyectos"; // Cambiado de ctaButtonText
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projectsData.map((project) => (
                 <a 
-                    href={`/proyectos/${project.slug}`} 
+                    href={`/proyectos#proyecto-${project.id}`} 
                     class="block rounded-xl overflow-hidden shadow-lg hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-lightGray group relative transition-all duration-300 ease-in-out transform hover:-translate-y-1 scroll-animate util-scale-up util-duration-normal util-delay-400ms"
                     aria-label={`Ver detalles del proyecto ${project.title}`}
                 >
