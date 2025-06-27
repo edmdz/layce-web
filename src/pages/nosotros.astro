@@ -8,8 +8,12 @@ const pageDescription = "Conoce la misión, visión, valores y el liderazgo de L
 <Layout title={pageTitle} description={pageDescription}>
   <div class="bg-white min-h-screen overflow-hidden">
     
-    <section class="bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/agua_drenaje/carpeta_1.jpg" alt="Banner Sobre Nosotros" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold balance-text mb-4">
           SOBRE <span class="text-white">NOSOTROS</span>
         </h1>

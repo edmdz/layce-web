@@ -1,27 +1,6 @@
 // Datos de los proyectos de LAYCE Construcciones
 export const proyectos = [
   {
-    id: 1,
-    title: "Estadio Borregos (Tec Mty)", // [cite: 47]
-    location: "Monterrey, N.L.",
-    description: "Gestión de proyecto ampliación", // [cite: 47]
-    category: "otros",
-    images: [
-      {
-        src: "https:/images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Gestión de proyecto ampliación Estadio Borregos Tecnológico de Monterrey"
-      },
-      {
-        src: "https:/images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Planificación y desarrollo de palcos en Estadio Borregos"
-      },
-      {
-        src: "https:/images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
-        alt: "Colaboración en proyecto de infraestructura deportiva"
-      }
-    ]
-  },
-  {
     id: 2,
     title: "Agua y Drenaje Monterrey", // [cite: 45]
     location: "Monterrey, N.L.",

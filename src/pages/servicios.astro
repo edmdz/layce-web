@@ -12,8 +12,12 @@ const backgroundClasses = ['bg-white', 'bg-lightGray'];
 
 <Layout title={pageTitle} description={pageDescription}>
   {/* Hero Section para la página de Servicios */}
-  <section class="bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative bg-primary text-white py-20 md:py-28 text-center scroll-animate util-fade-in util-duration-medium">
+    <div class="absolute inset-0 z-0">
+      <img src="/images/laredo_juarez/Laredo_Juarez_final_1.jpeg" alt="Banner Servicios" class="w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold balance-text mb-4">
         Soluciones Integrales en Construcción
       </h1>

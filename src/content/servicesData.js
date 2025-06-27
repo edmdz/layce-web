@@ -5,7 +5,7 @@ export const servicesPageData = [
         title: "Diseño y planificación",
         iconName: "pencil-square", // Nombre del icono de config/icons.js
         description: "Creamos soluciones integrales desde la concepción inicial, asegurando que cada detalle esté alineado con tus objetivos y las mejores prácticas de la industria.",
-        imageSrc: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        imageSrc: "https://images.unsplash.com/photo-1744627049721-73c27008ad28?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXJxdWl0ZWN0b3MlMjBwbGFub3MlMjBkaXNlJUMzJUIxb3xlbnwwfHwwfHx8Mg%3D%3D",
         imageAlt: "Arquitectos colaborando en planos de diseño detallados.",
         imagePosition: "left",
         bulletPoints: [
@@ -24,7 +24,7 @@ export const servicesPageData = [
         title: "Construcción y remodelación",
         iconName: "building-office-2",
         description: "Materializamos tus proyectos con los más altos estándares de calidad, desde obra nueva hasta renovaciones que transforman espacios existentes.",
-        imageSrc: "https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+        imageSrc: "/images/monumento_sendero/monumento_sendero_2.jpeg",
         imageAlt: "Sitio de construcción activo con maquinaria y trabajadores.",
         imagePosition: "right",
         bulletPoints: [
