@@ -59,47 +59,24 @@ const pageDescription =
                 Envíanos un Mensaje
               </h2>
               <p class="text-neutralText/70 mb-8">
-                Completa el siguiente formulario y nos pondremos en contacto
-                contigo a la brevedad.
+                Completa el siguiente formulario y te contactaremos por WhatsApp a
+                la brevedad.
               </p>
 
-              {/* Formulario configurado para Formspree */}
-              <form
-                action="https://formspree.io/f/xovwqlyq"
-                method="POST"
-                class="space-y-6"
-              >
-                {/* Campo para redirigir a página interna después del envío */}
-                <input type="hidden" name="_next" value="https://laycecontrucciones.com/gracias" />
-                
-                <div>
-                  <label
-                    for="nombre"
-                    class="block text-sm font-medium text-neutralText/90"
-                    >Nombre Completo</label
-                  >
-                  <input
-                    type="text"
-                    name="nombre"
-                    id="nombre"
-                    autocomplete="name"
-                    required
-                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
-                  />
-                </div>
-
+              <!-- Formulario para enviar WhatsApp -->
+              <form id="whatsapp-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      for="email"
+                      for="nombre"
                       class="block text-sm font-medium text-neutralText/90"
-                      >Correo Electrónico</label
+                      >Nombre Completo</label
                     >
                     <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      autocomplete="email"
+                      type="text"
+                      name="nombre"
+                      id="nombre"
+                      autocomplete="name"
                       required
                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
                     />
@@ -108,15 +85,14 @@ const pageDescription =
                     <label
                       for="telefono"
                       class="block text-sm font-medium text-neutralText/90"
-                      >Teléfono <span class="text-xs text-gray-500"
-                        >(Opcional)</span
-                      ></label
+                      >Teléfono</label
                     >
                     <input
                       type="tel"
                       name="telefono"
                       id="telefono"
                       autocomplete="tel"
+                      required
                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
                     />
                   </div>
@@ -149,34 +125,26 @@ const pageDescription =
                     rows="4"
                     required
                     class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
+                    placeholder="Describe brevemente tu proyecto o consulta."
                   ></textarea>
                 </div>
-
-                {/* Campo "honeypot" opcional para spam (recomendado) */}
-                {
-                  /* <input type="text" name="_gotcha" style="display:none" /> */
-                }
-
-                {
-                  /* Si quieres redirigir a una página de "Gracias" específica en tu sitio: */
-                }
-                {
-                  /* <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html"> */
-                }
-
-                {
-                  /* Si quieres especificar un email de respuesta diferente al de tu cuenta Formspree (el usuario debe confirmar este email): */
-                }
-                {
-                  /* <input type="hidden" name="_replyto" value="otra-direccion@example.com"> */
-                }
 
                 <div class="text-right">
                   <button
                     type="submit"
-                    class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-secondary hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary/70 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                    class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                   >
-                    Enviar Mensaje
+                    <svg
+                      class="w-5 h-5 mr-2 -ml-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M16.65,13.45C16.65,13.45 16.6,13.45 16.6,13.45C16.13,13.21 14.5,12.44 14.26,12.35C14.03,12.26 13.86,12.21 13.69,12.44C13.53,12.68 13.01,13.26 12.84,13.45C12.68,13.64 12.51,13.66 12.26,13.54C11.76,13.29 10.93,13 10,12.2C9.21,11.53 8.66,10.66 8.54,10.42C8.42,10.18 8.54,10.04 8.66,9.92C8.77,9.81 8.9,9.66 9.04,9.5C9.18,9.34 9.23,9.23 9.32,9.04C9.41,8.86 9.35,8.71 9.28,8.59C9.21,8.47 8.75,7.38 8.56,6.91C8.38,6.44 8.19,6.51 8.06,6.51C7.93,6.51 7.76,6.51 7.59,6.51C7.43,6.51 7.16,6.58 6.94,6.81C6.73,7.05 6.21,7.55 6.21,8.71C6.21,9.87 6.97,10.96 7.1,11.11C7.22,11.26 8.7,13.73 11.16,14.74C13.6,15.74 13.6,15.56 14.08,15.5C14.55,15.45 15.88,14.74 16.11,14.1C16.34,13.45 16.34,12.91 16.28,12.82C16.21,12.73 16.08,12.68 15.91,12.61L15.91,12.61ZM12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2ZM12,20.5C7.31,20.5 3.5,16.69 3.5,12C3.5,7.31 7.31,3.5 12,3.5C16.69,3.5 20.5,7.31 20.5,12C20.5,16.69 16.69,20.5 12,20.5Z"
+                      ></path>
+                    </svg>
+                    Enviar por WhatsApp
                   </button>
                 </div>
               </form>
@@ -210,9 +178,9 @@ const pageDescription =
                         >Correo Electrónico:</strong
                       >
                       <a
-                        href="mailto:Cynthia.reyna.2021@gmail.com"
+                        href="mailto:layceconstrucciones@gmail.com"
                         class="text-primary hover:text-secondary transition-colors duration-300 break-all"
-                        >Cynthia.reyna.2021@gmail.com</a
+                        >layceconstrucciones@gmail.com</a
                       >
                       {/* [cite: 527] */}
                     </div>
@@ -299,6 +267,51 @@ const pageDescription =
     </section>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("whatsapp-form");
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nombreInput = document.getElementById("nombre");
+        const telefonoInput = document.getElementById("telefono");
+        const asuntoInput = document.getElementById("asunto");
+        const mensajeInput = document.getElementById("mensaje");
+
+        const nombre = nombreInput ? nombreInput.value : "";
+        const telefono = telefonoInput ? telefonoInput.value : "";
+        const asunto = asuntoInput ? asuntoInput.value : "";
+        const mensaje = mensajeInput ? mensajeInput.value : "";
+
+        if (!nombre || !telefono || !mensaje) {
+          alert("Por favor, completa todos los campos requeridos.");
+          return;
+        }
+
+        const numeroWhatsapp = "528119178992";
+
+        let template = `¡Hola! Vengo de su sitio web.\n\n*Mi nombre es:* ${nombre}\n`;
+        if (telefono) {
+          template += `*Mi teléfono de contacto es:* ${telefono}\n`;
+        }
+        if (asunto) {
+          template += `*Asunto:* ${asunto}\n`;
+        }
+        if (mensaje) {
+          template += `\n*Mensaje:*\n${mensaje}`;
+        }
+
+        const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
+          template
+        )}`;
+
+        window.open(url, "_blank");
+      });
+    }
+  });
+</script>
 
 <style>
   .balance-text {
